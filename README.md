@@ -1,3 +1,10 @@
+---
+  tags: hashes
+  languages: ruby
+---
+
+# Hashketball
+
 Great news! You're going to an NBA game! The only catch is that you've been volunteered to keep stats at the game.
 
 Using Nested Hashes, define a game, with two teams, their players, and the players stats:
