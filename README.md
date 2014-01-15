@@ -32,151 +32,32 @@ Using Nested Hashes, define a game, with two teams, their players, and the playe
 
 Use the following seed data to structure the data however you'd like. Think about how you might be accessing the data when designing your nested hash structure.
 
-|                    | Jeff Adrien       | Bismak Biyombo    | DeSagna Diop      | Ben Gordon      | Brendan Haywood   | Alan Anderson | Reggie Evans | Brook Lopez  | Mason Plumlee | Jason Terry   |
-|:------------------:|-------------------|-------------------|-------------------|-----------------|-------------------|---------------|--------------|--------------|---------------|---------------|
-| **Team**           | Charlotte Hornets | Charlotte Hornets | Charlotte Hornets | Charlet Hornets | Charlotte Hornets | Brooklyn Nets | Brooklyn Nets| Brooklyn Nets| Brooklyn Nets | Brooklyn Nets |
-| **Number**         |
-| **Shoe**           |
-| **Points**         |
-| **Rebounds**       | 
-| **Assists**        |
-| **Steals**         |
-| **Blocks**         |
-| **Slam Dunks**     |
+Home Team = Brooklyn Nets, Colors = Black, White
+Away Team = Charlotte Hornets, Colors = Turquoise, Purple
 
-game = {
-  :home => { :team_name => "Charlotte Hornets",
-             :colors => ["Turquoise", "Purple"],
-             :players => [
-               {:player_name => "Jeff Adrien",
-                :number => 4,
-                :shoe_size => 18,
-                :stats => {
-                  :points => 10,
-                  :rebounds => 1,
-                  :assists => 1,
-                  :steals => 2,
-                  :blocks => 7,
-                  :slam_dunks => 2
-                 }
-                },
-               {:player_name => "Bismak Biyombo",
-                :number => 0,
-                :shoe_size => 16,
-                :stats => {
-                  :points => 12,
-                  :rebounds => 4,
-                  :assists => 7,
-                  :steals => 7,
-                  :blocks => 15,
-                  :slam_dunks => 10
-                  }
-                },
-               {:player_name => "DeSagna Diop",
-                :number => 2,
-                :shoe_size => 14,
-                :stats => {
-                  :points => 24,
-                  :rebounds => 12,
-                  :assists => 12,
-                  :steals => 4,
-                  :blocks => 5,
-                  :slam_dunks => 5
-                  }
-                },
-               {:player_name => "Ben Gordon",
-                :number => 8,
-                :shoe_size => 15,
-                :stats => {
-                  :points => 33,
-                  :rebounds => 3,
-                  :assists => 2,
-                  :steals => 1,
-                  :blocks => 1,
-                  :slam_dunks => 0
-                  }
-                },
-               {:player_name => "Brendan Haywood",
-                :number => 33,
-                :shoe_size => 15,
-                :stats => {
-                  :points => 6,
-                  :rebounds => 12,
-                  :assists => 12,
-                  :steals => 22,
-                  :blocks => 5,
-                  :slam_dunks => 12
-                  }
-                }
-              ]
-          },
-  :away => { :team_name => "Brooklyn Nets",
-             :colors => ["Black", "White"],
-             :players => [
-               {:player_name => "Alan Anderson",
-                :number => 0,
-                :shoe_size => 16,
-                :stats => {
-                  :points => 22,
-                  :rebounds => 12,
-                  :assists => 12,
-                  :steals => 3,
-                  :blocks => 1,
-                  :slam_dunks => 1
-                  }
-                },
-               {:player_name => "Reggie Evans",
-                :number => 30,
-                :shoe_size => 14,
-                :stats => {
-                  :points => 12,
-                  :rebounds => 12,
-                  :assists => 12,
-                  :steals => 12,
-                  :blocks => 12,
-                  :slam_dunks => 7
-                  }
-                },
-               {:player_name => "Brook Lopez",
-                :number => 11,
-                :shoe_size => 17,
-                :stats => {
-                  :points => 17,
-                  :rebounds => 19,
-                  :assists => 10,
-                  :steals => 3,
-                  :blocks => 1,
-                  :slam_dunks => 15
-                  }
-                },
-               {:player_name => "Mason Plumlee",
-                :number => 1,
-                :shoe_size => 19,
-                :stats => {
-                  :points => 26,
-                  :rebounds => 12,
-                  :assists => 6,
-                  :steals => 3,
-                  :blocks => 8,
-                  :slam_dunks => 5
-                  }
-                },
-               {:player_name => "Jason Terry",
-                :number => 31,
-                :shoe_size => 15,
-                :stats => {
-                  :points => 19,
-                  :rebounds => 2,
-                  :assists => 2,
-                  :steals => 4,
-                  :blocks => 11,
-                  :slam_dunks => 1
-                  }
-                }
-               ]
-  
-  }
-}
+|                    | Jeff Adrien       | Bismak Biyombo    | DeSagna Diop      | Ben Gordon      | Brendan Haywood   |
+|:------------------:|:-----------------:|:-----------------:|:-----------------:|:---------------:|:-----------------:|
+| **Team**           | Charlotte Hornets | Charlotte Hornets | Charlotte Hornets | Charlet Hornets | Charlotte Hornets |
+| **Number**         | 4                 | 0                 | 2                 | 8               | 33                |
+| **Shoe**           | 18                | 16                | 14                | 15              | 15                |
+| **Points**         | 10                | 12                | 24                | 33              | 6                 |
+| **Rebounds**       | 1                 | 4                 | 12                | 3               | 12                |
+| **Assists**        | 1                 | 7                 | 12                | 2               | 12                |
+| **Steals**         | 2                 | 7                 | 4                 | 1               | 22                |
+| **Blocks**         | 7                 | 15                | 5                 | 1               | 5                 |
+| **Slam Dunks**     | 2                 | 10                | 5                 | 0               | 12                |
+
+|                    | Alan Anderson | Reggie Evans | Brook Lopez  | Mason Plumlee | Jason Terry   |
+|:------------------:|:-------------:|:------------:|:------------:|:-------------:|:-------------:|
+| **Team**           | Brooklyn Nets | Brooklyn Nets| Brooklyn Nets| Brooklyn Nets | Brooklyn Nets |
+| **Number**         | 0             | 30           | 11           | 1             | 31            |
+| **Shoe**           | 16            | 14           | 17           | 19            | 15            |
+| **Points**         | 22            | 12           | 17           | 26            | 19            |
+| **Rebounds**       | 12            | 12           | 19           | 12            | 2             |
+| **Assists**        | 12            | 12           | 10           | 6             | 2             |
+| **Steals**         | 3             | 12           | 3            | 3             | 4             |
+| **Blocks**         | 1             | 12           | 1            | 8             | 11            |
+| **Slam Dunks**     | 1             | 7            | 15           | 5             | 1             |
 
 Using the power of Ruby, and the hashes you created above, write methods to complete the following questions:
 
