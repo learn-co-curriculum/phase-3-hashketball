@@ -32,17 +32,17 @@ Using Nested Hashes, define a game, with two teams, their players, and the playe
 
 Use the following seed data to structure the data however you'd like. Think about how you might be accessing the data when designing your nested hash structure.
 
-|                  | Jeff Adrien       | Bismak Biyombo    | DeSagna Diop      | Ben Gordon      | Brendan Haywood   | Alan Anderson | Reggie Evans | Brook Lopez  | Mason Plumlee | Jason Terry   |
-|------------------|-------------------|-------------------|-------------------|-----------------|-------------------|---------------|--------------|--------------|---------------|---------------|
-|: **Team**       :| Charlotte Hornets | Charlotte Hornets | Charlotte Hornets | Charlet Hornets | Charlotte Hornets | Brooklyn Nets | Brooklyn Nets| Brooklyn Nets| Brooklyn Nets | Brooklyn Nets |
-|: **Number**     :|
-|: **Shoe**       :|
-|: **Points**     :|
-|: **Rebounds**   :| 
-|: **Assists**    :|
-|: **Steals**     :|
-|: **Blocks**     :|
-|: **Slam Dunks** :|
+|                    | Jeff Adrien       | Bismak Biyombo    | DeSagna Diop      | Ben Gordon      | Brendan Haywood   | Alan Anderson | Reggie Evans | Brook Lopez  | Mason Plumlee | Jason Terry   |
+|:------------------:|-------------------|-------------------|-------------------|-----------------|-------------------|---------------|--------------|--------------|---------------|---------------|
+| **Team**           | Charlotte Hornets | Charlotte Hornets | Charlotte Hornets | Charlet Hornets | Charlotte Hornets | Brooklyn Nets | Brooklyn Nets| Brooklyn Nets| Brooklyn Nets | Brooklyn Nets |
+| **Number**         |
+| **Shoe**           |
+| **Points**         |
+| **Rebounds**       | 
+| **Assists**        |
+| **Steals**         |
+| **Blocks**         |
+| **Slam Dunks**     |
 
 game = {
   :home => { :team_name => "Charlotte Hornets",
