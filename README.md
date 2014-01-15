@@ -32,8 +32,8 @@ Using Nested Hashes, define a game, with two teams, their players, and the playe
 
 Use the following seed data to structure the data however you'd like. Think about how you might be accessing the data when designing your nested hash structure.
 
-Home Team = Brooklyn Nets, Colors = Black, White
-Away Team = Charlotte Hornets, Colors = Turquoise, Purple
+* Home Team = Brooklyn Nets, Colors = Black, White
+* Away Team = Charlotte Hornets, Colors = Turquoise, Purple
 
 |                    | Jeff Adrien       | Bismak Biyombo    | DeSagna Diop      | Ben Gordon      | Brendan Haywood   |
 |:------------------:|:-----------------:|:-----------------:|:-----------------:|:---------------:|:-----------------:|
