@@ -59,7 +59,7 @@ Use the following seed data to structure the data however you'd like. Think abou
 | **Blocks**         | 1             | 12           | 1            | 8             | 11            |
 | **Slam Dunks**     | 1             | 7            | 15           | 5             | 1             |
 
-Using the power of Ruby, and the hashes you created above, write methods to complete the following questions:
+Using the power of Ruby, and the hashes you created, write methods to complete the following:
 
 1. Return the number of points scored for any player, given that player's name as a string.
 
