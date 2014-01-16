@@ -68,7 +68,8 @@ Using the power of Ruby, and the hashes you created, write methods to complete t
 
 4. Return both colors for any team, given the team name. Call the method `team_colors`.
 
-5. Return both teams names, given the game_hash. Call the method `team_names`.
+5. Return both teams names, given the game_hash. Call the method `team_names`. Note: Since you have a method `game_hash` that
+returns your hash, there is no need to pass it in as an argument! You can just call it from within your `team_names` method.
 
 6. Return all the player numbers for a team, given a team name. Call the method `player_numbers`.
 
