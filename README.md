@@ -61,30 +61,30 @@ Use the following seed data to structure the data however you'd like. Think abou
 
 Using the power of Ruby, and the hashes you created, write methods to complete the following:
 
-1. Return the number of points scored for any player, given that player's name as a string.
+1. Return the number of points scored for any player, given that player's name as a string. Call the method `num_points_scored`.
 
-2. Return the shoe size for any player, given that player's name.
+2. Return the shoe size for any player, given that player's name. Call the method `shoe_size`.
 
-3. Return both colors for any team, given the team name.
+3. Return both colors for any team, given the team name. Call the method `team_colors`.
 
-4. Return both teams names, given the game_hash.
+4. Return both teams names, given the game_hash. Call the method `team_names`.
 
-5. Return all the player numbers for a team, given a team name.
+5. Return all the player numbers for a team, given a team name. Call the method `player_numbers`.
 
-6. Return all the stats for a player, given a player's name.
+6. Return all the stats for a player, given a player's name. Call the method `player_stats`.
 
-7. Return the number of rebounds for the player with the largest shoe size.
+7. Return the number of rebounds for the player with the largest shoe size. Call the method `big_shoe_rebounds`.
 
 **Bonus Questions:**
 
 Define methods to return the answer to the following questions:
 
-1. Which player has the most points?
+1. Which player has the most points? Call the method `most_points_scored`.
 
-2. Which team has the most points?
+2. Which team has the most points? Call the method `winning_team`.
 
-3. Which player has the longest name?
+3. Which player has the longest name? Call the method `longest_name`.
 
 **Super Bonus:**
 
-Write a method that returns true if the player with the longest name had the most steals
+1. Write a method that returns true if the player with the longest name had the most steals. Call the method `sounds_about_right`.
