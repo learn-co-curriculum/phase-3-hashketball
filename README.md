@@ -17,7 +17,6 @@ Using Nested Hashes, define a game, with two teams, their players, and the playe
 * A team has:
   * name
   * colors (x2)
-* Each team should have 5 players
 * Each player should have a:
   * name
   * jersey_number
@@ -61,19 +60,35 @@ Use the following seed data to structure the data however you'd like. Think abou
 
 Using the power of Ruby, and the hashes you created, write methods to complete the following:
 
-1. Return the number of points scored for any player, given that player's name as a string. Call the method `num_points_scored`.
+1. Returns your game hash. Call the method `game_hash`.
 
-2. Return the shoe size for any player, given that player's name. Call the method `shoe_size`.
+2. Return the number of points scored for any player, given that player's name as a string. Call the method `num_points_scored`.
 
-3. Return both colors for any team, given the team name. Call the method `team_colors`.
+3. Return the shoe size for any player, given that player's name. Call the method `shoe_size`.
 
-4. Return both teams names, given the game_hash. Call the method `team_names`.
+4. Return both colors for any team, given the team name. Call the method `team_colors`.
 
-5. Return all the player numbers for a team, given a team name. Call the method `player_numbers`.
+5. Return both teams names, given the game_hash. Call the method `team_names`.
 
-6. Return all the stats for a player, given a player's name. Call the method `player_stats`.
+6. Return all the player numbers for a team, given a team name. Call the method `player_numbers`.
 
-7. Return the number of rebounds for the player with the largest shoe size. Call the method `big_shoe_rebounds`.
+7. Return all the stats for a player, given a player's name. The stats should be returned as a hash, which each
+stat name as a key and the corresponding stat as a value. Call the method `player_stats`. eg:
+
+    ```bash
+    player_stats("Alan Anderson")
+    => { :number => 0,
+         :shoe => 16,
+         :points => 22,
+         :rebounds => 12,
+         :assists => 12,
+         :steals => 3,
+         :blocks => 1,
+         :slam_dunks => 1
+       }
+    ```
+
+8. Return the number of rebounds for the player with the largest shoe size. Call the method `big_shoe_rebounds`.
 
 **Bonus Questions:**
 
