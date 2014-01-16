@@ -83,8 +83,8 @@ Define methods to return the answer to the following questions:
 
 2. Which team has the most points? Call the method `winning_team`.
 
-3. Which player has the longest name? Call the method `longest_name`.
+3. Which player has the longest name? Call the method `player_with_longest_name`.
 
 **Super Bonus:**
 
-1. Write a method that returns true if the player with the longest name had the most steals. Call the method `sounds_about_right`.
+1. Write a method that returns true if the player with the longest name had the most steals. Call the method `long_name_steals_a_ton?`.
