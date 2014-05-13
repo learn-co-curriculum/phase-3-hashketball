@@ -1,7 +1,7 @@
 ---
   tags: hashes, iteration
   languages: ruby
-resources: 1
+  resources: 1
 ---
 
 # Hashketball
@@ -105,5 +105,6 @@ Define methods to return the answer to the following questions:
 **Super Bonus:**
 
 1. Write a method that returns true if the player with the longest name had the most steals. Call the method `long_name_steals_a_ton?`.
+
 ## Resources
 * [Codecademy](http://www.codecademy.com/dashboard) - [A Night at the Movies](http://external.codecademy.com/courses/ruby-beginner-en-0i8v1/0/1), page 
