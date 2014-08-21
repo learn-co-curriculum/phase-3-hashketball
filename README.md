@@ -6,7 +6,7 @@
 
 # Hashketball
 
-### Skills: Hashes and Iteration
+## Skills: Hashes and Iteration
 
 ## Instructions
 
