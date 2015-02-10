@@ -1,13 +1,27 @@
+require 'pry'
 require 'spec_helper'
 
 describe 'hashketball' do
 
   describe '#game_hash' do
+    let(:top_level_keys) { [:home, :away] }
+    let(:team_level_keys) { [:team_name, :colors, :players] }
 
-    it 'should return a hash' do
+    it 'returns a hash' do
       expect(game_hash).to be_a(Hash)
     end
 
+    it 'returns the correct top-level keys' do
+      top_level_keys.each do |key|
+        expect(game_hash.keys).to include(key)
+      end
+    end
+
+    it 'returns the correct team-level keys' do
+      team_level_keys.each do |key|
+        expect(game_hash.values.first.keys).to include(key)
+      end
+    end
   end
 
   describe '#num_points_scored' do
@@ -103,7 +117,7 @@ describe 'hashketball' do
     }
 
     let(:bismak_stats) {
-      { 
+      {
         :number => 0,
         :shoe => 16,
         :points => 12,
@@ -116,7 +130,7 @@ describe 'hashketball' do
     }
 
     let(:desagna_stats) {
-      { 
+      {
         :number => 2,
         :shoe => 14,
         :points => 24,
@@ -129,7 +143,7 @@ describe 'hashketball' do
     }
 
     let(:ben_stats) {
-      { 
+      {
         :number => 8,
         :shoe => 15,
         :points => 33,
@@ -142,7 +156,7 @@ describe 'hashketball' do
     }
 
     let(:brendan_stats) {
-      { 
+      {
         :number => 33,
         :shoe => 15,
         :points => 6,
@@ -155,7 +169,7 @@ describe 'hashketball' do
     }
 
     let(:alan_stats) {
-      { 
+      {
         :number => 0,
         :shoe => 16,
         :points => 22,
@@ -168,7 +182,7 @@ describe 'hashketball' do
     }
 
     let(:reggie_stats) {
-      { 
+      {
         :number => 30,
         :shoe => 14,
         :points => 12,
@@ -181,7 +195,7 @@ describe 'hashketball' do
     }
 
     let(:brook_stats) {
-      { 
+      {
         :number => 11,
         :shoe => 17,
         :points => 17,
@@ -194,7 +208,7 @@ describe 'hashketball' do
     }
 
     let(:mason_stats) {
-      { 
+      {
         :number => 1,
         :shoe => 19,
         :points => 26,
@@ -207,7 +221,7 @@ describe 'hashketball' do
     }
 
     let(:jason_stats) {
-      { 
+      {
         :number => 31,
         :shoe => 15,
         :points => 19,
