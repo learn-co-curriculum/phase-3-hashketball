@@ -28,7 +28,8 @@ Using Nested Hashes, define a game, with two teams, their players, and the playe
   * blocks
   * slam_dunks
 
-Use the following seed data to structure the data however you'd like. Think about how you might be accessing the data when designing your nested hash structure.
+Use the following seed data to structure your game hash as suggested above. When designing your nested hash structure think about how one might want to access the data. 
+Remember to run `learn` to see what the tests expect. 
 
 * Home Team = Brooklyn Nets, Colors = Black, White
 * Away Team = Charlotte Hornets, Colors = Turquoise, Purple
