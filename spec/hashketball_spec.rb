@@ -249,7 +249,7 @@ describe 'hashketball' do
 
   describe '#big_shoe_rebounds' do
 
-    it 'returns 12 rebouds' do
+    it 'returns 12 rebounds' do
       expect(big_shoe_rebounds).to eq(12)
     end
 
