@@ -60,21 +60,10 @@ describe 'hashketball' do
   describe '#team_colors' do
 
     it 'knows the Brooklyn Nets colors are Black and White' do
-      brooklyn_colors = team_colors("Brooklyn Nets")
-      expect(brooklyn_colors.size).to eq(2)
-      brooklyn_colors.each do |color|
-        expect(["Black", "White"]).to include(color)
+      expect(team_colors("Brooklyn Nets")).to contain_exactly("Black", "White")
+      expect(team_colors("Charlotte Hornets")).to contain_exactly("Turquoise", "Purple")
       end
     end
-
-    it 'knows the Charlotte Hornets colors are Turquoise and Purple' do
-      charlotte_colors = team_colors("Charlotte Hornets")
-      expect(charlotte_colors.size).to eq(2)
-      charlotte_colors.each do |color|
-        expect(["Turquoise", "Purple"]).to include(color)
-      end
-    end
-  end
 
   describe '#team_names' do
 
@@ -249,7 +238,7 @@ describe 'hashketball' do
 
   describe '#big_shoe_rebounds' do
 
-    it 'returns 12 rebounds' do
+    it 'returns the number of rebounds of the player with the biggest shoe size' do
       expect(big_shoe_rebounds).to eq(12)
     end
 

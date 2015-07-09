@@ -1,54 +1,52 @@
----
-  tags: hashes, iteration
-  languages: ruby
-  resources: 1
----
-
 # Hashketball
+
+## Objectives
+
+1. Practice building nested hashes
+2. Practice iterating over nested hashes
 
 ## Instructions
 
 Great news! You're going to an NBA game! The only catch is that you've been volunteered to keep stats at the game.
 
-Using Nested Hashes, define a game, with two teams, their players, and the players stats:
+Fork and clone this lab and run the test suite to get started. You'll be coding your solution in `hashketball.rb`. 
 
-* The game has two teams
-* A team has:
-  * name
-  * colors (x2)
-* Each player should have a:
-  * name
-  * jersey_number
-  * shoe_size
-* Each player should have the following stats:
-  * points
-  * rebounds
-  * assists
-  * steals
-  * blocks
-  * slam_dunks
+### Part 1: Building the Hash
 
-Use the following seed data to structure your game hash as suggested above. When designing your nested hash structure think about how one might want to access the data. 
-Remember to run `learn` to see what the tests expect. 
+The first method you will define is called `game_hash`. This method contains and returns a hash nested in the following manner: 
 
-* Home Team = Brooklyn Nets, Colors = Black, White
-* Away Team = Charlotte Hornets, Colors = Turquoise, Purple
+* The top level of the has has two keys: `:home`, for the home team, and `:away`, for the away team. 
+* The values of the `:home` and `:away` keys are hashes. These hashes have the following keys: 
+  * `:team_name`
+  * `:colors`
+  * `:players`
+* The `:team_name` key points to a string of the team name. 
+* The `:colors` key points to an array of strings that are that team's colors. 
+  * The `:players` key points to a hash of player stats. The keys of the `:players` hash are listed below. The values for each player's stats can be found in the table below. 
+    * `:player_name`
+    * `:number`
+    * `:shoe`
+    * `:points`
+    * `:rebounds`
+    * `:assists`
+    * `:steals`
+    * `:blocks`
+    * `:slam_dunks`
 
-|                    | Jeff Adrien       | Bismak Biyombo    | DeSagna Diop      | Ben Gordon      | Brendan Haywood   |
-|:------------------:|:-----------------:|:-----------------:|:-----------------:|:---------------:|:-----------------:|
-| **Team**           | Charlotte Hornets | Charlotte Hornets | Charlotte Hornets | Charlet Hornets | Charlotte Hornets |
-| **Number**         | 4                 | 0                 | 2                 | 8               | 33                |
-| **Shoe**           | 18                | 16                | 14                | 15              | 15                |
-| **Points**         | 10                | 12                | 24                | 33              | 6                 |
-| **Rebounds**       | 1                 | 4                 | 12                | 3               | 12                |
-| **Assists**        | 1                 | 7                 | 12                | 2               | 12                |
-| **Steals**         | 2                 | 7                 | 4                 | 1               | 22                |
-| **Blocks**         | 7                 | 15                | 5                 | 1               | 5                 |
-| **Slam Dunks**     | 2                 | 10                | 5                 | 0               | 12                |
 
-|                    | Alan Anderson | Reggie Evans | Brook Lopez  | Mason Plumlee | Jason Terry   |
+
+Use the following data to populate your `game_hash` as outlined above. Remember to run `learn` to see what the tests expect. 
+
+Home Team: 
+
+* team name: Brooklyn Nets
+* colors: black, white
+* players: 
+
+
+|          Stat          | Info | Info |  Info | Info | Info   |
 |:------------------:|:-------------:|:------------:|:------------:|:-------------:|:-------------:|
-| **Team**           | Brooklyn Nets | Brooklyn Nets| Brooklyn Nets| Brooklyn Nets | Brooklyn Nets |
+| **Player Name**    |  Alan Anderson| Reggie Evans | Brook Lopez  | Mason Plumlee | Jason Terry   |
 | **Number**         | 0             | 30           | 11           | 1             | 31            |
 | **Shoe**           | 16            | 14           | 17           | 19            | 15            |
 | **Points**         | 22            | 12           | 17           | 26            | 19            |
@@ -58,23 +56,87 @@ Remember to run `learn` to see what the tests expect.
 | **Blocks**         | 1             | 12           | 1            | 8             | 11            |
 | **Slam Dunks**     | 1             | 7            | 15           | 5             | 1             |
 
-Using the power of Ruby, and the hashes you created, write methods to complete the following:
 
-1. Returns your game hash. Call the method `game_hash`.
+Away Team:
 
-2. Return the number of points scored for any player, given that player's name as a string. Call the method `num_points_scored`.
+* team name: Charlotte Hornets
+* colors: turquoise, purple
+* players:
 
-3. Return the shoe size for any player, given that player's name. Call the method `shoe_size`.
+|        Stat       |     Info          |         Info     |              Info |         Info     |         Info      |               
+|:------------------:|:-----------------:|:-----------------:|:-----------------:|:---------------:|:-----------------:|
+| **Player Name**  | Jeff Adrien     | Bismak Biyombo    | DeSagna Diop      | Ben Gordon      | Brendan Haywood   |
+| **Number**         | 4                 | 0                 | 2                 | 8               | 33                |
+| **Shoe**           | 18                | 16                | 14                | 15              | 15                |
+| **Points**         | 10                | 12                | 24                | 33              | 6                 |
+| **Rebounds**       | 1                 | 4                 | 12                | 3               | 12                |
+| **Assists**        | 1                 | 7                 | 12                | 2               | 12                |
+| **Steals**         | 2                 | 7                 | 4                 | 1               | 22                |
+| **Blocks**         | 7                 | 15                | 5                 | 1               | 5                 |
+| **Slam Dunks**     | 2                 | 10                | 5                 | 0               | 12                |
 
-4. Return both colors for any team, given the team name. Call the method `team_colors`.
 
-5. Return both teams names, given the game_hash. Call the method `team_names`. Note: Since you have a method `game_hash` that
-returns your hash, there is no need to pass it in as an argument! You can just call it from within your `team_names` method.
+### Step 2: Building Methods
 
-6. Return all the player numbers for a team, given a team name. Call the method `player_numbers`.
+### Calling Methods within Methods
 
-7. Return all the stats for a player, given a player's name. The stats should be returned as a hash, which each
-stat name as a key and the corresponding stat as a value. Call the method `player_stats`. eg:
+You'll be building a series of methods that operate on the above game hash to return certain information about the teams and players. Each method will operate on the game hash by calling the `game_hash` method that returns the game_hash. In other words, since our `game_hash` method returns our hash, you can think of the `game_hash` like a variable that points to our hash and operate on it just as you would with hashes in previous lessons. 
+
+For example, let's say we want to build a method, `home_team_name`, that returns the name of the home team, "Brooklyn Nets". We can call the method `game_hash` inside of our `home_team_name` method and operate on the game_hash:
+
+```ruby
+def home_team_name
+  game_hash[:home][:team_name]
+end
+
+puts home_team_name
+# => "Brooklyn Nets"
+```
+
+Now that we understand how we are going to operate on the `game_hash` inside of the methods we're building, let's build those methods: 
+
+### Iterating through Nested Levels:
+
+This lab requires us to iterate through the many levels of our nested hash. DON'T TAKE YOUR UNDERSTANDING OF YOUR HASH FOR GRANTED. Every time you iterate into a new level of the hash, immediately place a `binding.pry` there. Then, run rspec or learn to see what the key/value pairs of that hash are. 
+
+Let's take a look at an example: 
+
+```ruby
+def good_practices
+  game_hash.each do |location, team_data|
+    #are you ABSOLUTELY SURE what 'location' and 'team data' are? use binding.pry to find out!
+    binding.pry
+      team_data.each do |attribute, data|
+        #are you ABSOLUTELY SURE what 'attribute' and 'team data' are? use binding.pry to find out!
+        binding.pry
+        
+        #what is 'data' at each loop through out .each block? when will the following line of code work and when will it break?
+        data.each do |data_item|
+            binding.pry
+      end
+    end
+  end
+end
+```
+
+Open up the `hashketball.rb` file and copy and paste the above method. Then, beneath the `end` that closes the method definition, call the method (`good_practices`) and, in your terminal, run the file with `ruby hashketball.rb`. Play around with the methods in each binding until you get comfortable with the iteration. This should give you a stronger sense of how we iterate through so many levels of a nested hash and what happens on each level. **Use this method of placing LOTS of bindings when you iterate in order to solve this lab.**
+
+Okay, *now* we're ready to build out methods: 
+
+### Method Building
+
+* Build a method, `num_points_scored` that takes in an argument of a player's name and returns the number of points scored for that player. 
+  * Think about where in the hash you will find a player's `:points`. How can you iterate down into that level? Think about the return value of your method. Remember that `.each` returns the original collection that you are iterating over. How can you return the number of points for a particular player?
+
+* Build a method, `shoe_size`, that takes in an argument of a player's name and returns the shoe size for that player. 
+  * Think about how you will find the shoe size of the correct player. How can you check and see if a player's name matches the name that has been passed into the method as an argument?
+* Build a method, `team_colors`, that takes in an argument of the team name and returns an array of that teams colors. 
+* Build a method, `team_names`, that operates on the game hash to return an array of the team names. 
+* Build a method, `player_numbers`, that takes in an argument of a team name and returns an array of the jersey number's for that team. 
+* Build a method, `player_stats`, that takes in an argument of a player's name and returns a hash of that player's stats. The stat hash *should not include the player's name*.
+  * Once you find the hash of stats for the correct player, think about how to remove a key/value pair from a hash. The `delete_if` enumerator might be a good place to start.
+  * Check out the following example of the expected return value of the `player_stats` method: 
+  
 
     ```bash
     player_stats("Alan Anderson")
@@ -89,7 +151,11 @@ stat name as a key and the corresponding stat as a value. Call the method `playe
        }
     ```
 
-8. Return the number of rebounds for the player with the largest shoe size. Call the method `big_shoe_rebounds`.
+* Build a method, `big_shoe_rebounds`, that will return the number of rebounds associated with the player that has the largest shoe size. Break this one down into steps: 
+  * First, find the player with the largest shoe size
+  * Then, return that player's number of rebounds
+  * Remember to think about return values here. Use `binding.pry` to drop into your method and understand what it is returning and why. 
+
 
 **Bonus Questions:**
 
