@@ -2,8 +2,8 @@
 
 ## Objectives
 
-1. Practice building nested hashes
-2. Practice iterating over nested hashes
+1. Practice building nested hashes.
+2. Practice iterating over nested hashes.
 
 ## Instructions
 
@@ -15,14 +15,14 @@ Fork and clone this lab and run the test suite to get started. You'll be coding 
 
 The first method you will define is called `game_hash`. This method contains and returns a hash nested in the following manner: 
 
-* The top level of the has has two keys: `:home`, for the home team, and `:away`, for the away team. 
+* The top level of the hash has two keys: `:home`, for the home team, and `:away`, for the away team. 
 * The values of the `:home` and `:away` keys are hashes. These hashes have the following keys: 
   * `:team_name`
   * `:colors`
   * `:players`
 * The `:team_name` key points to a string of the team name. 
 * The `:colors` key points to an array of strings that are that team's colors. 
-  * The `:players` key points to a hash of player stats. The keys of the `:players` hash are listed below. The values for each player's stats can be found in the table below. 
+* The `:players` key points to a hash of players whose names (as strings) are the keys to a hash containing their stats. The values for each player's names and their stats can be found in the table below. The stats keys should be formatted like this:
     * `:player_name`
     * `:number`
     * `:shoe`
@@ -40,7 +40,7 @@ Use the following data to populate your `game_hash` as outlined above. Remember 
 Home Team: 
 
 * team name: Brooklyn Nets
-* colors: black, white
+* colors: Black, White
 * players: 
 
 
@@ -60,7 +60,7 @@ Home Team:
 Away Team:
 
 * team name: Charlotte Hornets
-* colors: turquoise, purple
+* colors: Turquoise, Purple
 * players:
 
 |        Stat       |     Info          |         Info     |              Info |         Info     |         Info      |               
@@ -80,9 +80,9 @@ Away Team:
 
 ### Calling Methods within Methods
 
-You'll be building a series of methods that operate on the above game hash to return certain information about the teams and players. Each method will operate on the game hash by calling the `game_hash` method that returns the game_hash. In other words, since our `game_hash` method returns our hash, you can think of the `game_hash` like a variable that points to our hash and operate on it just as you would with hashes in previous lessons. 
+You'll be building a series of methods that operate on the above game hash to return certain information about the teams and players. Each method will operate on the game hash by calling the `game_hash` method that returns the `game_hash`. In other words, since our `game_hash` method returns our hash, you can think of the `game_hash` like a variable that points to our hash and operate on it just as you would with hashes in previous lessons. 
 
-For example, let's say we want to build a method, `home_team_name`, that returns the name of the home team, "Brooklyn Nets". We can call the method `game_hash` inside of our `home_team_name` method and operate on the game_hash:
+For example, let's say we want to build a method, `home_team_name`, that returns the name of the home team, `"Brooklyn Nets"`. We can call the method `game_hash` inside of our `home_team_name` method and operate on the game_hash:
 
 ```ruby
 def home_team_name
@@ -97,7 +97,7 @@ Now that we understand how we are going to operate on the `game_hash` inside of 
 
 ### Iterating through Nested Levels:
 
-This lab requires us to iterate through the many levels of our nested hash. DON'T TAKE YOUR UNDERSTANDING OF YOUR HASH FOR GRANTED. Every time you iterate into a new level of the hash, immediately place a `binding.pry` there. Then, run rspec or learn to see what the key/value pairs of that hash are. 
+This lab requires us to iterate through the many levels of our nested hash. DON'T TAKE YOUR UNDERSTANDING OF YOUR HASH FOR GRANTED. Every time you iterate into a new level of the hash, immediately place a `binding.pry` there. Then, run RSpec with the `learn` command to see what the key/value pairs of that hash are. 
 
 Let's take a look at an example: 
 
