@@ -22,7 +22,7 @@ The first method you will define is called `game_hash`. This method contains and
   * `:players`
 * The `:team_name` key points to a string of the team name. 
 * The `:colors` key points to an array of strings that are that team's colors. 
-  * The `:players` key points to a hash of player stats. The keys of the `:players` hash are listed below. The values for each player's stats can be found in the table below. 
+  * The :players key points to an array of players. Each player (i.e. each index item of the array) is represented by a hash. The keys of the of the hash that represents each player are listed below. The values for each player's stats can be found in the table below.
     * `:player_name`
     * `:number`
     * `:shoe`
