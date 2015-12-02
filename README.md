@@ -22,8 +22,8 @@ The first method you will define is called `game_hash`. This method contains and
   * `:players`
 * The `:team_name` key points to a string of the team name. 
 * The `:colors` key points to an array of strings that are that team's colors. 
-* The `:players` key points to an array of players. Each player (i.e. each index item of the array) is represented by a hash whose names (as strings) are the keys to a hash containing their stats. The values for each player's names and their stats can be found in the table below. The stats keys should be formatted like this:
-    * `:player_name`
+* The `:players` key points to a hash of players whose names (as strings) are the keys to a hash containing their stats. The values for each player's names and their stats can be found in the table below. The stats keys should be formatted like this:
+    * `:player_name` (optional, as the key pointing to this hash is the player's name)
     * `:number`
     * `:shoe`
     * `:num_points_scored`
@@ -173,5 +173,3 @@ Define methods to return the answer to the following questions:
 
 ## Resources
 * [Codecademy](http://www.codecademy.com/dashboard) - [A Night at the Movies](http://external.codecademy.com/courses/ruby-beginner-en-0i8v1/0/1)
-
-<a href='https://learn.co/lessons/advanced-hashes-hashketball' data-visibility='hidden'>View this lesson on Learn.co</a>
