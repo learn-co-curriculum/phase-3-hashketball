@@ -7,7 +7,7 @@
 
 ## Instructions
 
-Great news! You're going to an NBA game! The only catch is that you've been volunteered to keep stats at the game.
+Great news! You're going to an NBA game. The only catch is that you've been volunteered to keep stats at the game.
 
 Fork and clone this lab and run the test suite to get started. You'll be coding your solution in `hashketball.rb`. 
 
@@ -173,5 +173,3 @@ Define methods to return the answer to the following questions:
 
 ## Resources
 * [Codecademy](http://www.codecademy.com/dashboard) - [A Night at the Movies](http://external.codecademy.com/courses/ruby-beginner-en-0i8v1/0/1)
-
-<a href='https://learn.co/lessons/advanced-hashes-hashketball' data-visibility='hidden'>View this lesson on Learn.co</a>
