@@ -26,7 +26,7 @@ The first method you will define is called `game_hash`. This method contains and
     * `:player_name` (optional, as the key pointing to this hash is the player's name)
     * `:number`
     * `:shoe`
-    * `:num_points_scored`
+    * `:points`
     * `:rebounds`
     * `:assists`
     * `:steals`
