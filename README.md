@@ -1,12 +1,10 @@
 # JavaScript Objectball
 
 ## Objectives
-
 1. Practice building nested objects.
 2. Practice iterating over nested objects.
 
 ## Instructions
-
 Great news! You're going to an NBA game. The only catch is that you've been
 volunteered to keep stats at the game.
 
@@ -14,7 +12,6 @@ Fork and clone this lab and run the test suite to get started. You'll be
 coding your solution in `objectball.js`.
 
 ### Part 1: Building the Object
-
 The first funtion you will define is called `gameObject`. This funtion contains
 and returns a object nested in the following manner:
 
@@ -38,17 +35,13 @@ and returns a object nested in the following manner:
   * `"blocks"`
   * `"slamDunks"`
 
-
-
 Use the following data to populate your `gameObject` as outlined above.
 Remember to run `learn` to see what the tests expect.
 
 Home Team:
-
-* team name: Brooklyn Nets
-* colors: Black, White
-* players:
-
+* Team name: Brooklyn Nets
+* Colors: Black, White
+* Players:
 
 |          Stat          | Info | Info |  Info | Info | Info   |
 |:------------------:|:-------------:|:------------:|:------------:|:-------------:|:-------------:|
@@ -62,12 +55,11 @@ Home Team:
 | **Blocks**         | 1             | 12           | 1            | 8             | 11            |
 | **Slam Dunks**     | 1             | 7            | 15           | 5             | 1             |
 
-
 Away Team:
 
-* team name: Charlotte Hornets
-* colors: Turquoise, Purple
-* players:
+* Team name: Charlotte Hornets
+* Colors: Turquoise, Purple
+* Players:
 
 |        Stat       |     Info          |         Info     |              Info |         Info     |         Info      |               
 |:------------------:|:-----------------:|:-----------------:|:-----------------:|:---------------:|:-----------------:|
@@ -121,18 +113,31 @@ console.log(homeTeamName())
 
 Now that we understand how we are going to operate on the object that's
 returned from `gameObject` inside of other functions we're building, let's
-build those functions:
+make sure we know how to debug ou programs, then build those functions.
 
 # Debugging JavaScript
 We have two options to debug our JavaScript programs:
 
-1. use `console.log()` to print out parts of our program.
-2. use a debug tool to pause our program, step through it and inspect values.
+1. Use `console.log()` to print out parts of our program.
+2. Use a debug tool to pause our program, step through it and inspect values.
 
-Using `console.log()` is an absolutely legitimate debugging technique. Using
-a debug tool often offers us more power and leaves less residue in our
-programs (because we don't have to delete lots of `console.log()` statements
-later. Both have their advantages and disadvantages.
+Using `console.log()` is an absolutely legitimate debugging technique. It can
+be nice because you can see lots of output from your program without it
+stopping and you can see how values change over time as you print them out.
+Using `console.log()` means we have to manually print out exactly what we
+want to see and we can't really change our minds in the middle of a debug
+session. Using `console.log()` also litters our program with lots of print
+statements so you'll find yourself deleting them once you're done debugging.
+
+Using a debug tool will allow us to pause our program and interact in more
+powerful ways in the middle of a debugging session. We can set more
+breakpoints while we're debugging, type new code into the console to see what
+happens, and interactively investigate the value of different parts of our
+program.
+
+There are two debug tools. One is built into `node` and it's simple. The other
+is built into Chrome and it's fantastically interactive.
+
 
 When we run our programs in the command line using `node` we won't have
 access to a fancy debugger. Node does have it's own built-in debugger, but
@@ -141,18 +146,24 @@ hard to use. Check out the docs and see if you like it!
 
 * [Node's debugger documentation](https://nodejs.org/api/debugger.html)
 
-Instead of using `node` to debug or JavaScript programs let's attach our
-JavaScript to an HTML page, open that HTML page in Chrome and leverage
-Chrome's amazing developer tools.
+When we're running command line applications in our terminal it would be
+natural to run our code with `node`. This means we won't have access to
+Chrome's fancy debugger.
+
+Instead of using `node` to debug or command line JavaScript programs let's
+attach our JavaScript to an HTML page, open that HTML page in Chrome and
+leverage Chrome's amazing developer tools.
 
 Here's a sample webpage that doesn't have much content and primarily just
-attaches a JavaSCript file:
+attaches a JavaSCript file. Chrome will execute the JavaScript and we can
+open Chrome's dev tools to debug our program.
 
 ```html
 <h1>JavaScript Objectball</h1>
 <p>Open your Chrome dev tools to see console output and trigger the debugger to catch.</p>
 
 <script src="./objectball.js"></script>
+<script src="./debug.js"></script>
 ```
 
 We can include the `debugger` keyword to stop our program and inspect it with
@@ -230,6 +241,20 @@ Object.entries(oo) => [ [ 'foo', 42 ], [ 'bar', 83 ], [ 'baz', 79 ] ]
 ```
 
 ### Iterating Through Deeply Nested Objects
+Go to the `index.html` file and uncomment the third `<script>` element
+`02-advanced-debug.js`. Do this after you've built your `gameObject` function
+that returns an object with all the properties described in the beginning of
+this lab.
+
+Open `index.html` in Chrome, open Chrome's developer tools and inspect the
+flow of this program. Get used to using Chrome's debug buttons like "play",
+"step over." These buttons control the debugger. Pressing "play" will have
+the program continue running until it hits another `debugger` keyword.
+Pressing "step over" will make the program execute code one statement at a
+time so you can step through your program bit by bit without adding
+`debugger` keywords everywhere.
+
+**02-advanced-debug.js**
 ```js
 function goodPractices()
   let game = gameObject();
@@ -254,42 +279,47 @@ function goodPractices()
 }
 ```
 
-Open up the `hashketball.js` file and add the line *require "pry"* at the top
-and copy and paste the above function. Then, beneath the `end` that closes the
-function definition, call the function (`goodPractices`) and, in your terminal,
-run the file with `node hashketball.js`. Play around with the functions in each
-binding until you get comfortable with the iteration. This should give you a
-stronger sense of how we iterate through so many levels of a nested hash and
-what happens on each level. **Use this function of placing LOTS of `debugger`
-keywords when you iterate in order to solve this lab.**
+Play around with the debug tools around each `debugger` keyword until you get
+comfortable with the iteration. This should give you a stronger sense of how
+we iterate through so many levels of a nested hash and what happens on each
+level. **Use this strategy of placing LOTS of `debugger` keywords when you
+iterate over things in order to investigate your program and solve this
+lab.**
 
 Okay, *now* we're ready to build out functions:
 
 ### Function Building
 
 * Build a function, `numPointsScored` that takes in an argument of a player's name and returns the number of points scored for that player.
-  * Think about where in the hash you will find a player's `:points`. How can you iterate down into that level? Think about the return value of your function. Remember that `.each` returns the original collection that you are iterating over. How can you return the number of points for a particular player?
-
+  * Think about where in the hash you will find a player's `points`. How can
+    you iterate down into that level? Think about the return value of your
+    function.
 * Build a function, `shoeSize`, that takes in an argument of a player's name and returns the shoe size for that player.
-  * Think about how you will find the shoe size of the correct player. How can you check and see if a player's name matches the name that has been passed into the function as an argument?
-* Build a function, `teamColors`, that takes in an argument of the team name and returns an array of that teams colors.
-* Build a function, `teamNames`, that operates on the game hash to return an array of the team names.
-* Build a function, `playerNumbers`, that takes in an argument of a team name and returns an array of the jersey number's for that team.
-* Build a function, `playerStats`, that takes in an argument of a player's name and returns a hash of that player's stats.
+  * Think about how you will find the shoe size of the correct player. How can
+    you check and see if a player's name matches the name that has been passed
+    into the function as an argument?
+* Build a function, `teamColors`, that takes in an argument of the team name
+  and returns an array of that teams colors.
+* Build a function, `teamNames`, that operates on the game hash to return an
+  array of the team names.
+* Build a function, `playerNumbers`, that takes in an argument of a team name
+  and returns an array of the jersey number's for that team.
+* Build a function, `playerStats`, that takes in an argument of a player's name
+  and returns a hash of that player's stats.
   * Check out the following example of the expected return value of the `playerStats` function:
 
-
-    ```bash
+    ```js
     playerStats("Alan Anderson")
-    => { :number => 0,
-         :shoe => 16,
-         :points => 22,
-         :rebounds => 12,
-         :assists => 12,
-         :steals => 3,
-         :blocks => 1,
-         :slamDunks => 1
-       }
+    {
+      number: 0,
+      shoe: 16,
+      points: 22,
+      rebounds: 12,
+      assists: 12,
+      steals: 3,
+      blocks: 1,
+      slamDunks: 1
+    }
     ```
 
 * Build a function, `bigShoeRebounds`, that will return the number of rebounds
@@ -297,7 +327,7 @@ Okay, *now* we're ready to build out functions:
   down into steps:
   * First, find the player with the largest shoe size
   * Then, return that player's number of rebounds
-  * Remember to think about return values here. Use `binding.pry` to drop into
+  * Remember to think about return values here. Use `debugger` to drop into
     your function and understand what it is returning and why.
 
 
@@ -306,12 +336,10 @@ Okay, *now* we're ready to build out functions:
 Define functions to return the answer to the following questions:
 
 1. Which player has the most points? Call the function `mostPointsScored`.
-
 2. Which team has the most points? Call the function `winningTeam`.
-
 3. Which player has the longest name? Call the function `playerWithLongestName`.
 
 **Super Bonus:**
 
 1. Write a function that returns true if the player with the longest name had
-   the most steals. Call the function `longNameStealsATon?`.
+   the most steals. Call the function `doesLongNameStealATon`.
