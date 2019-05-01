@@ -64,7 +64,7 @@ Away Team:
 
 |        Stat       |     Info          |         Info     |              Info |         Info     |         Info      |               
 |:------------------:|:-----------------:|:-----------------:|:-----------------:|:---------------:|:-----------------:|
-| **Player Name**  | Jeff Adrien     | Bismak Biyombo    | DeSagna Diop      | Ben Gordon      | Brendan Haywood   |
+| **Player Name**  | Jeff Adrien     | Bismack Biyombo    | DeSagna Diop      | Ben Gordon      | Brendan Haywood   |
 | **Number**         | 4                 | 0                 | 2                 | 8               | 33                |
 | **Shoe**           | 18                | 16                | 14                | 15              | 15                |
 | **Points**         | 10                | 12                | 24                | 33              | 6                 |
