@@ -47,7 +47,6 @@ Home Team:
 * colors: Black, White
 * players:
 
-
 |          Stat          | Info | Info |  Info | Info | Info   |
 |:------------------:|:-------------:|:------------:|:------------:|:-------------:|:-------------:|
 | **Player Name**    |  Alan Anderson| Reggie Evans | Brook Lopez  | Mason Plumlee | Jason Terry   |
@@ -66,7 +65,7 @@ Away Team:
 * colors: Turquoise, Purple
 * players:
 
-|        Stat       |     Info          |         Info     |              Info |         Info     |         Info      |               
+|        Stat       |     Info          |         Info     |              Info |         Info     |         Info      |
 |:------------------:|:-----------------:|:-----------------:|:-----------------:|:---------------:|:-----------------:|
 | **Player Name**  | Jeff Adrien     | Bismack Biyombo    | DeSagna Diop      | Ben Gordon      | Kemba Walker   |
 | **Number**         | 4                 | 0                 | 2                 | 8               | 33                |
@@ -101,7 +100,6 @@ end
 puts home_team_name
 # => "Brooklyn Nets"
 ```
-
 
 Now that we understand how we are going to operate on the `game_hash` inside of
 the methods we're building, let's build those methods:
