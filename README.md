@@ -1,25 +1,27 @@
 # Hashketball
 
-## Objectives
+## Learning Goals
 
-1. Practice building nested hashes.
-2. Practice iterating over nested hashes.
+* Practice building nested hashes.
+* Practice iterating over nested hashes.
 
 ## Instructions
 
 Great news! You're going to an NBA game. The only catch is that you've been
 volunteered to keep stats at the game.
 
-Fork and clone this lab and run the test suite to get started. You'll be coding
-your solution in `hashketball.rb`.
+Code your solution in `hashketball.rb` following the steps below. Use `learn` 
+as you go to get additional information from test messages.
 
 ### Part 1: Building the Hash
 
 The first method you will define is called `game_hash`. This method contains and
 returns a hash nested in the following manner:
 
-* The top level of the hash has two keys: `:home`, for the home team, and `:away`, for the away team.
-* The values of the `:home` and `:away` keys are hashes. These hashes have the following keys:
+* The top level of the hash has two keys: `:home`, for the home team, and
+  `:away`, for the away team.
+* The values of the `:home` and `:away` keys are hashes. These hashes have the
+  following keys:
   * `:team_name`
   * `:colors`
   * `:players`
@@ -85,7 +87,7 @@ You'll be building a series of methods that operate on the above game hash to
 return certain information about the teams and players. Each method will operate
 on the game hash by calling the `game_hash` method that returns the `game_hash`.
 In other words, since our `game_hash` method returns our hash, you can think of
-the `game_hash` like a variable that points to our hash and operate on it just
+the `game_hash` like a variable that points to our hash and operates on it just
 as you would with hashes in previous lessons.
 
 For example, let's say we want to build a method, `home_team_name`, that returns
@@ -107,38 +109,51 @@ the methods we're building, let's build those methods:
 ### Iterating Through Nested Levels
 
 This lab requires us to iterate through the many levels of our nested hash.
-DON'T TAKE YOUR UNDERSTANDING OF YOUR HASH FOR GRANTED. Every time you iterate
-into a new level of the hash, immediately place a `binding.pry` there. Then, run
-RSpec with the `learn` command to see what the key/value pairs of that hash are.
+DON'T TAKE YOUR UNDERSTANDING OF YOUR HASH FOR GRANTED. 
 
-Let's take a look at an example:
+To help us fully understand how iterating through nested levels works, we're
+going to utilizing a tool called Pry. Using Pry, when running RSpec tests with
+the `learn` command, we can actually pause the execution of our Ruby code. This
+allows us to step into the code and play with any available variables or methods.
+
+By using Pry while iterating through nested hashes, we can stop at each
+iteration and look at the values currently available. To do this, we'll need to
+require Pry and add `binding.pry` to the code wherever we want to pause.
+
+Let's take a look at an example - Open up the `hashketball.rb` file and add the
+line `require "pry"` at the top:
+
+```ruby
+require "pry"
+```
+
+Then, copy and paste the following method:
 
 ```ruby
 def good_practices
   game_hash.each do |location, team_data|
     #are you ABSOLUTELY SURE what 'location' and 'team data' are? use binding.pry to find out!
     binding.pry
-      team_data.each do |attribute, data|
-        #are you ABSOLUTELY SURE what 'attribute' and 'team data' are? use binding.pry to find out!
-        binding.pry
+    team_data.each do |attribute, data|
+      #are you ABSOLUTELY SURE what 'attribute' and 'team data' are? use binding.pry to find out!
+      binding.pry
 
-        #what is 'data' at each loop through out .each block? when will the following line of code work and when will it break?
-        data.each do |data_item|
-            binding.pry
+      #what is 'data' at each loop throughout .each block? when will the following line of code work and when will it break?
+      data.each do |data_item|
+          binding.pry
       end
     end
   end
 end
 ```
 
-Open up the `hashketball.rb` file and add the line *require "pry"* at the top
-and copy and paste the above method. Then, beneath the `end` that closes the
-method definition, call the method (`good_practices`) and, in your terminal, run
-the file with `ruby hashketball.rb`. Play around with the methods in each
-binding until you get comfortable with the iteration. This should give you a
-stronger sense of how we iterate through so many levels of a nested hash and
-what happens on each level. **Use this method of placing LOTS of bindings when
-you iterate in order to solve this lab.**
+Beneath the `end` that closes the method definition, call the method
+(`good_practices`) and, in your terminal, run the file with `ruby
+hashketball.rb`. Play around with the methods in each binding until you get
+comfortable with the iteration. This should give you a stronger sense of how we
+iterate through so many levels of a nested hash and what happens on each level.
+**Use this method of placing LOTS of bindings when you iterate in order to solve
+this lab.**
 
 Okay, *now* we're ready to build out methods:
 
@@ -157,29 +172,33 @@ Okay, *now* we're ready to build out methods:
   * Think about how you will find the shoe size of the correct player. How can
     you check and see if a player's name matches the name that has been passed
     into the method as an argument?
+
 * Build a method, `team_colors`, that takes in an argument of the team name and
   returns an array of that teams colors.
+
 * Build a method, `team_names`, that operates on the game hash to return an
   array of the team names.
+
 * Build a method, `player_numbers`, that takes in an argument of a team name and
   returns an array of the jersey number's for that team.
+
 * Build a method, `player_stats`, that takes in an argument of a player's name
   and returns a hash of that player's stats.
   * Check out the following example of the expected return value of the
     `player_stats` method:
 
-    ```bash
-    player_stats("Alan Anderson")
-    => { :number => 0,
-         :shoe => 16,
-         :points => 22,
-         :rebounds => 12,
-         :assists => 12,
-         :steals => 3,
-         :blocks => 1,
-         :slam_dunks => 1
-       }
-    ```
+  ```bash
+  player_stats("Alan Anderson")
+  => { :number => 0,
+        :shoe => 16,
+        :points => 22,
+        :rebounds => 12,
+        :assists => 12,
+        :steals => 3,
+        :blocks => 1,
+        :slam_dunks => 1
+      }
+  ```
 
 * Build a method, `big_shoe_rebounds`, that will return the number of rebounds
   associated with the player that has the largest shoe size. Break this one down
@@ -201,6 +220,7 @@ Define methods to return the answer to the following questions:
 
 **Super Bonus:**
 
-1. Write a method that returns true if the player with the longest name had the most steals. Call the method `long_name_steals_a_ton?`.
+1. Write a method that returns true if the player with the longest name had the
+   most steals. Call the method `long_name_steals_a_ton?`.
 
 <p class='util--hide'>View <a href='https://learn.co/lessons/advanced-hashes-hashketball'>Hashketball</a> on Learn.co and start learning to code for free.</p>
