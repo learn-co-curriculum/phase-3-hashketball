@@ -10,8 +10,44 @@
 Great news! You're going to an NBA game. The only catch is that you've been
 volunteered to keep stats at the game.
 
-Code your solution in `hashketball.rb` following the steps below. Use `learn` 
+Code your solution in `hashketball.rb` following the steps below. Use `learn`
 as you go to get additional information from test messages.
+
+## Important Hint
+
+While we've been focusing on processing `Array`s and `Hash`es using our
+friends, the Enumerable methods, this is really just a bigger version of 
+working with nested data structures (NDS). Your mission is two parts: build a
+complex NDS _and then_ process the NDS to create statistical _insights_.
+
+Use the process you internalized from working with nested data structures. The
+process we recommend is: 
+
+1. Understand the NDS
+  * "Pretty-Print" NDS with `pp`
+  * Home-Grown Pretty-Print NDS
+2. Use `[]` to verify your understanding from Step 1
+  * Print values to verify your understanding
+  * Leave code comments and documentation for yourself
+3. Wrap uses of `[]` from Step 2 into new methods
+  * Create simple methods with meaningful names ("First-Order Methods")
+  * Ensure "First-Order Methods" use arguments to create flexibility
+4. See-saw between bottom-up and top-down method writing
+  * Write a method that provides an insight e.g. `oldest_student`
+  * Evaluate your First Order Methods
+  * Can you use your First-Order Methods to build the insight method's
+    implementation?
+    * **YES**: Great! Your method is done!
+    * **NO**: Build a new method that combines _other_ methods to get closer to what the insight method needs. Repeat step 4
+5. Insight method provides an insight! We're done!
+
+If you want, go back and look at some of your previous work from when you were
+just getting started with NDS: do you want an "`Array` of `Array` of `Hash`es"?
+Or will an "`Array` of `Array`" be just fine?
+
+Draw out your data structure on paper first. If you can't get the data
+structure to match the tests, no matter how clever your Enumerable use, you're
+going to get bad wrong output back out.
 
 ### Part 1: Building the Hash
 
@@ -27,9 +63,9 @@ returns a hash nested in the following manner:
   * `:players`
 * The `:team_name` key points to a string of the team name.
 * The `:colors` key points to an array of strings that are that team's colors.
-* The `:players` key points to an `Array` of `Hash`es. Each `Hash` in the array
-  should contain the players' stats as listed below and their stats can be
-  found in the table below. The stats keys should be formatted like this:
+* The `:players` key points to an `Array` of `Hash`es. Each `Hash` in the `Array`
+  should contain the players' stats. Each stat should be a key that points to
+  a value for that stat. The keys should be:
   * `:number`
   * `:shoe`
   * `:points`
@@ -38,9 +74,7 @@ returns a hash nested in the following manner:
   * `:steals`
   * `:blocks`
   * `:slam_dunks`
-
-Use the following data to populate your `game_hash` as outlined above. Remember
-to run `learn` to see what the tests expect.
+* The data for each player is provided in a table below.
 
 Home Team:
 
@@ -78,7 +112,54 @@ Away Team:
 | **Blocks**         | 7                 | 15                | 5                 | 1               | 5                 |
 | **Slam Dunks**     | 2                 | 10                | 5                 | 0               | 12                |
 
+The `game_hash` method should return your nested data structure. Remember to
+run `learn` to see what the tests expect. The tests can help you validate that
+your NDS is correct.
+
+### Process Tip
+
+**TIP**: When you have your strategy for your NDS worked out, start typing it
+in in the file `hashketball.rb`. We recommend you start with an empty `Hash`.
+Run `ruby hashketball.rb`. If your NDS (the `Hash`) has been correctly
+formatted, the `ruby` command will silently return (unless you program in some
+`puts` or `print` statements). Every time you add a new player, "run" the
+program again. If you see that you have a syntax error, it's because you
+mis-typed your NDS. Fix it before you do another player. Constantly asking Ruby
+"Hey can you read this?" means that what you test with the `learn` command is
+not "broken." It might be _wrong_ and you need to change things, but it's much
+easier to tweak a valid NDS (that doesn't pass the tests) than to try to get a
+broken NDS (that doesn't pass the tests) working. Move from working, to
+working, to working. Never let "broken in this way, and that way, and that way"
+mount up!
+
 ### Step 2: Building Methods
+
+Recall what you learned in working with nested data structures. When you have a
+complex NDS, use code to help you deal with it.
+
+1. Understand the NDS
+  * "Pretty-Print" NDS with `pp`
+  * Home-Grown Pretty-Print NDS
+2. Use `[]` to verify your understanding from Step 1
+  * Print values to verify your understanding
+  * Leave code comments and documentation for yourself
+3. Wrap uses of `[]` from Step 2 into new methods
+  * Create simple methods with meaningful names ("First-Order Methods")
+  * Ensure "First-Order Methods" use arguments to create flexibility
+4. See-saw between bottom-up and top-down method writing
+  * Write a method that provides an insight e.g. `oldest_student`
+  * Evaluate your First Order Methods
+  * Can you use your First-Order Methods to build the insight method's
+    implementation?
+    * **YES**: Great! Your method is done!
+    * **NO**: Build a new method that combines _other_ methods to get closer to what the insight method needs. Repeat step 4
+5. Insight method provides an insight! We're done!
+
+While you might have seen this pattern with simple NDS work, this pattern **is
+still valid**. The only thing that's changed is that in the method
+implementations you can now use awesome Enumerable methods instead of
+long-winded `while` code. ***This process works***. Take this lab as a chance
+to hone your skills attacking BIG problems with process _on your side_.
 
 ### Calling Methods within Methods
 
@@ -91,7 +172,7 @@ as you would with hashes in previous lessons.
 
 For example, let's say we want to build a method, `home_team_name`, that returns
 the name of the home team, `"Brooklyn Nets"`. We can call the method `game_hash`
-inside of our `home_team_name` method and operate on the game_hash:
+inside of our `home_team_name` method and operate on the `game_hash:`
 
 ```ruby
 def home_team_name
@@ -107,20 +188,21 @@ the methods we're building, let's build those methods:
 
 ### Iterating Through Nested Levels
 
-This lab requires us to iterate through the many levels of our nested hash.
-DON'T TAKE YOUR UNDERSTANDING OF YOUR HASH FOR GRANTED. 
+If you follow the process, you will have a good grasp of your NDS and the work
+you need to accomplish. In a case where you get truly stuck, you might want to
+use a tool called `pry`.
 
-To help us fully understand how iterating through nested levels works, we're
-going to utilizing a tool called Pry. Using Pry, when running RSpec tests with
-the `learn` command, we can actually pause the execution of our Ruby code. This
-allows us to step into the code and play with any available variables or methods.
+Using Pry, when running RSpec tests with the `learn` command, we can actually
+pause the execution of our Ruby code. This allows us to step into the code and
+play with any available variables or methods.
 
 By using Pry while iterating through nested hashes, we can stop at each
 iteration and look at the values currently available. To do this, we'll need to
 require Pry and add `binding.pry` to the code wherever we want to pause.
 
-Let's take a look at an example - Open up the `hashketball.rb` file and add the
-line `require "pry"` at the top:
+Let's take a look at an example - Open up the `hashketball.rb` file once you
+have your `game_hash` method working and add the line `require "pry"` at the
+top:
 
 ```ruby
 require "pry"
@@ -148,13 +230,21 @@ end
 
 Beneath the `end` that closes the method definition, call the method
 (`good_practices`) and, in your terminal, run the file with `ruby
-hashketball.rb`. Play around with the methods in each binding until you get
-comfortable with the iteration. This should give you a stronger sense of how we
-iterate through so many levels of a nested hash and what happens on each level.
-**Use this method of placing LOTS of bindings when you iterate in order to solve
-this lab.**
+hashketball.rb`.
 
-Okay, *now* we're ready to build out methods:
+At every place Ruby sees `binding.pry` it will stop execution. While the
+program is stopped, you can print out variables that are in scope. At the first
+`binding.pry` in the example above, you can type in `location` or `team_data`
+and have those values printed out by `pry`. When you're done at the binding,
+type `exit` and the code will resume running. If you're all done with a given
+`pry` session `exit-program` will close Pry and return you to the command-line.
+
+Again, the best way to avoid needing Pry is to follow the process and only add
+code by small increments. But, sometimes, when all else fails, a `binding.pry`
+can help you find your way again. We'll teach you more about debugging
+throughout this course and do a deeper dive on Pry specifically.
+
+Okay, *now* we're ready to build out methods that will provide our _insights_
 
 ### Method Building
 
