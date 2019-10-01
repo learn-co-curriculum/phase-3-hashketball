@@ -171,9 +171,9 @@ from where we need to start processing the NDS into _insights_.
 
 1. Ensure you can read data out of the NDS with simple, basic `[]` calls
 2. Wrap basic code that "reaches into" the NDS in methods that have friendly
-   human-names Wrap basic (or "First Order") methods into methods that do more ("Nth
+   human-names. Wrap basic (or "First Order") methods into methods that do more ("Nth
    Order") and are human-brain-friendly (`list_snacks`)
-3. Be flexible work from what you have to where you want to go; or, work
+3. Be flexible; work from what you have to where you want to go; or, work
    backwards; or, make a midpoint between what you have and what you need to
    have
 
@@ -309,7 +309,7 @@ pause the execution of our Ruby code. This allows us to step into the code and
 play with any available variables or methods that are in scope.
 
 We tell Ruby where to pause by writing `binding.pry` in our code. When Ruby
-sees that magic word it will stop execution and had things over to a REPL
+sees that magic word, it will stop execution and had things over to a REPL
 called Pry. It's there that we can do the inspection.
 
 Let's inspect what our `num_points_scored` works with:
