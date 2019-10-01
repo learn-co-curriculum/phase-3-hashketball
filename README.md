@@ -140,7 +140,7 @@ error-prone human eyes.
 When we have a lot of tests and run them all with `learn` and get back all
 those failing messages it can make us feel sad. It's like telling someone
 you're trying to learn an étude on piano and they keep telling you it's not
-perfect yet. "Yeah, we know, that's why we' said we're _l-e-a-r-n-i-n-g_ it."
+perfect yet. "Yeah, we know, that's why we said we're _l-e-a-r-n-i-n-g_ it."
 
 We can run a section of our tests by using the following command from the CLI:
 
