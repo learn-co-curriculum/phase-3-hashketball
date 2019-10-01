@@ -181,28 +181,24 @@ with process _on your side_.
 
 ### Calling Methods within Methods
 
-You'll be building a series of methods that operate on the above game hash to
-return certain information about the teams and players. Each method will operate
-on the game hash by calling the `game_hash` method that returns the `game_hash`.
-In other words, since our `game_hash` method returns our hash, you can think of
-the `game_hash` like a variable that points to our hash and operates on it just
-as you would with hashes in previous lessons.
+Run `learn`. There are a whole bunch of methods that are expected to exist. The
+first one is `num_points_scored`. We can run this method's test, again by using
+the [-e][example] or `--example` flag: `rspec spec/hashketball_spec.rb -e
+num_points_scored`.
 
-For example, let's say we want to build a method, `home_team_name`, that returns
-the name of the home team, `"Brooklyn Nets"`. We can call the method `game_hash`
-inside of our `home_team_name` method and operate on the `game_hash:`
+That `num_points_scored` method produces an _insight_. Why don't we define that
+method and have it return `game_hash`.
 
 ```ruby
-def home_team_name
-  game_hash[:home][:team_name]
+def num_points_scored
+  game_hash
 end
-
-puts home_team_name
-# => "Brooklyn Nets"
 ```
 
-Now that we understand how we are going to operate on the `game_hash` inside of
-the methods we're building, let's build those methods:
+Run the test again. Sure enough, our method fails (unsurprisingly). Here's a
+chance to employ the "see-saw" strategy. Iterate to get `num_points_scored`
+working. If you need to "invent" helper methods, to help you process
+`game_hash`, do so!
 
 ### Iterating Through Nested Levels
 
