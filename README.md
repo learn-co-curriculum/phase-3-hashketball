@@ -174,10 +174,10 @@ strategies for processing the NDS into _insights_.
    have
 
 While you might have seen this pattern with simple NDS work, this pattern **is
-still valid**. The only thing that's changed is that in the method
-implementations you can now use awesome Enumerable methods instead of
-long-winded `while` code. ***This process works***. Take this lab as a chance
-to hone your skills attacking BIG problems with process _on your side_.
+still valid**. The only thing that's changed is that in some places you can see
+where an Enumerable could make your code clearer and briefer.  ***This process
+works***. Take this lab as a chance to hone your skills attacking BIG problems
+with process _on your side_.
 
 ### Calling Methods within Methods
 
