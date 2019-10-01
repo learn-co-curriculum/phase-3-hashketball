@@ -7,14 +7,23 @@
 
 ## Instructions
 
-Great news! You're going to an NBA game. The only catch is that you've been
-volunteered to keep stats at the game. Oh, and the data from the game is _not_
-stored in a nested data structure for you. You're going to have to build it.
+This lab is about as representative of real-life tasks as a programmer as you
+can get: data on paper or in tables needs to be given to a programming language
+in order to deliver _insights_.
 
-This challenge comes in two major pieces:
+You're going to perform an analysis on NBA game. You've been provided some
+basic game data in a series of tables. You're going to ask Ruby to help you
+answer some questions about the game.
 
-1. Build an NDS from data stored in tables
+This challenge comes in three major pieces:
+
+1. Build an NDS from text and data stored in tables
+2. Understand your own NDS
 2. Process the NDS to produce _insights_ about how various players performed
+
+While you've worked with NDS using simple looping and Enumerables, you've never
+before had to _create_ such a complex NDS and _process_ it as well. Take it in
+pieces, remember your training, and you'll get there!
 
 Code your solution in `hashketball.rb` following the steps below. Use `learn`
 as you go to get additional information from test messages.
