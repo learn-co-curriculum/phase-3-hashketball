@@ -9,9 +9,9 @@
 
 This lab is about as representative of real-life tasks as a programmer as you
 can get: data on paper or in tables needs to be given to a programming language
-in order to deliver _insights_.
+to deliver _insights_.
 
-You're going to perform an analysis on NBA game. You've been provided some
+You're going to perform an analysis on an NBA game. You've been provided some
 basic game data in a series of tables. You're going to ask Ruby to help you
 answer some questions about the game.
 
@@ -32,8 +32,8 @@ start coding. We're going to show some tips and tricks that make the coding a
 lot easier...but only if you read through to the end.
 
 Code your solution in `hashketball.rb` following the steps below. Because this
-challenge is so big, we'll show you new techniques for running only small
-chunks of the test suite so that you're not overwhelmed by all the test data!
+lab is so big, we'll show you new techniques for running only small chunks of
+the test suite so that you're not overwhelmed by all the test data!
 
 ## Step 1: Building the Hash
 
@@ -99,8 +99,8 @@ Away Team:
 | **Slam Dunks**     | 2                 | 10                | 5                 | 0               | 12                |
 
 Write a method called `game_hash` that returns your nested data structure. We
-might suggest starting off with having `game_hash` return only a `{}`. Then run
-the `game_hash` tests (see next section) and slowly build up your nested data
+might suggest starting with having `game_hash` return only a `{}`. Then run the
+`game_hash` tests (see next section) and slowly build up your nested data
 structure to satisfy those tests. We'll describe the strategy here in the next
 sections.
 
@@ -151,10 +151,10 @@ The thing that lets us run only a portion of the test suite is the `-e` for
 `game_hash`." You can read more about it in the [RSpec documentation for `--example`][example].
 
 The `learn` program uses `rspec` to evaluate test success. So, if we get a
-chunk of the tests working, as proved by `rspec`, we can trust that those tests
+subset of the tests working, as proved by `rspec`, we can trust that those tests
 will pass when we run `learn`.
 
-> **Wisdom**: Move from working, to working, to working. Never let "broken in
+> **Wisdom**: Move from working to working to working. Never let "broken in
 > this way, and that way, and that way" mount up!
 
 ### Leaving Step 1
@@ -167,7 +167,7 @@ demand. We're ready for Step 2!
 
 ## Step 2: Building Methods
 
-At this point you're where you were with earlier labs. You were given a nested
+At this point, you're where you were with earlier labs. You were given a nested
 data structure and then needed to process it to product _insights_. Since you
 have a thorough understanding of the nested data structure (you wrote it, after
 all), we don't need to review things like using `pp` to "pretty-print" the
@@ -180,7 +180,7 @@ start processing the nested data structure into _insights_.
    that have friendly human-names. Wrap basic (or "First Order") methods into
    methods that do more ("Nth Order") and are human-brain-friendly (`list_snacks`)
 3. Be flexible; work from what you have to where you want to go; or, work
-   backwards; or, make a midpoint between what you have and what you need to
+   backward; or, make a midpoint between what you have and what you need to
    have
 
 While you might have seen this pattern with simple nested data structure work,
@@ -208,7 +208,7 @@ That `num_points_scored` method produces an _insight_. Here's a specification:
 * Build a method, `num_points_scored` that takes in an argument of a player's
   name and returns the number of points scored for that player.
 
-Why don't we define that method and have it return `game_hash`.
+Why don't we define that method and have it return `game_hash`?
 
 ```ruby
 def num_points_scored
@@ -242,13 +242,13 @@ way software is "grown" in the real world.
     into the method as an argument?
 
 * Build a method, `team_colors`, that takes in an argument of the team name and
-  returns an `Array` of that teams colors.
+  returns an `Array` of that team's colors.
 
 * Build a method, `team_names`, that operates on the game `Hash` to return an
   `Array` of the team names.
 
 * Build a method, `player_numbers`, that takes in an argument of a team name and
-  returns an `Array` of the jersey number's for that team.
+  returns an `Array` of the jersey numbers for that team.
 
 * Build a method, `player_stats`, that takes in an argument of a player's name
   and returns a hash of that player's stats.
@@ -308,14 +308,14 @@ From the command line run the command `gem install pry`. If the `gem` command
 returns telling you that pry was installed or that it's already installed, the
 following should work for you.
 
-Next, at the top of `hasketball.rb` put the line `require pry`.
+Next, at the top of `hashketball.rb` put the line `require "pry"`.
 
-Using Pry, when running RSpec tests with the `learn` command, we can actually
-pause the execution of our Ruby code. This allows us to step into the code and
-play with any available variables or methods that are in scope.
+Using Pry, when running RSpec tests with the `learn` command, we can pause the
+execution of our Ruby code. This allows us to step into the code and play with
+any available variables or methods that are in scope.
 
 We tell Ruby where to pause by writing `binding.pry` in our code. When Ruby
-sees that magic word, it will stop execution and had things over to a REPL
+sees that magic word, it will stop execution and hand things over to a REPL
 called Pry. It's there that we can do the inspection.
 
 Let's inspect what our `num_points_scored` works with:
@@ -339,12 +339,13 @@ def num_points_scored(player_name)
 end
 ```
 
-At every place Ruby sees `binding.pry` it will stop execution. While the
-program is stopped, you can print out variables that are in scope. At the first
-`binding.pry` in the example above, you can type in `location` or `team_data`
-and have those values printed out by `pry`. When you're done at the binding,
-type `exit` and the code will resume running. If you're all done with a given
-`pry` session `exit-program` will close Pry and return you to the command-line.
+At every place Ruby sees `binding.pry`, it will stop the program's execution.
+While the program is stopped, you can print out variables that are in scope. At
+the first `binding.pry` in the example above, you can type in `location` or
+`team_data` and have those values printed out by `pry`. When you're done at the
+binding, type `exit` and the code will resume running. If you're all done with
+a given `pry` session `exit-program` will close Pry and return you to the
+command-line.
 
 Again, the best way to avoid needing Pry is to follow the process and only add
 code by small increments. But, sometimes, when all else fails, a `binding.pry`
@@ -359,7 +360,7 @@ data, to produce insights. You've made huge strides in becoming a really solid
 developer in the procedural programming paradigm. This is a huge moment.
 Celebrate it!
 
-Believe it or not the code that put rockets in space and mankind on the Moon
+Believe it or not, the code that put rockets in space and mankind on the Moon
 were only slight variations on this style of programming. You've learned
 something really powerful!
 
