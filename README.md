@@ -94,9 +94,23 @@ Away Team:
 | **Blocks**         | 7                 | 15                | 5                 | 1               | 5                 |
 | **Slam Dunks**     | 2                 | 10                | 5                 | 0               | 12                |
 
-The `game_hash` method should return your nested data structure. Remember to
-run `learn` to see what the tests expect. The tests can help you validate that
-your NDS is correct.
+Write a method called `game_hash` that returns your nested data structure.
+
+We can run a section of our tests by using the following command from the CLI
+
+`rspec spec/hashketball_spec.rb -e game_hash`
+
+The `learn` program uses `rspec` to evaluate test success. So, if we get a
+chunk of the tests working, as verified by the command above, we can trust that
+those tests will pass when we run `learn`. The thing that lets us run only a
+portion of the test suite is the `-e` for `--example` flag. It means "only run
+tests in a section that matches the word `game_hash`." You can read more about
+it in the [RSpec documentation for `--example`][example].
+
+Let's zoom back out again and run _all_ the tests. We should expect to see lots
+of failures ***and that's OK!*** We expect tests we haven't worked on to, well,
+_not work_. But the good news, the thing that makes our hearts happy is that
+the three tests in the "`game_hash`" example are _passing_.
 
 ### Process Tip
 
@@ -294,4 +308,5 @@ Define methods to return the answer to the following questions:
 1. Write a method that returns true if the player with the longest name had the
    most steals. Call the method `long_name_steals_a_ton?`.
 
+[example]: https://relishapp.com/rspec/rspec-core/v/2-12/docs/command-line/example-option#match-on-one-word
 <p class='util--hide'>View <a href='https://learn.co/lessons/advanced-hashes-hashketball'>Hashketball</a> on Learn.co and start learning to code for free.</p>
