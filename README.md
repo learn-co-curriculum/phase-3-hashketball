@@ -22,8 +22,10 @@ This challenge comes in three major pieces:
 2. Process the NDS to produce _insights_ about how various players performed
 
 While you've worked with NDS using simple looping and Enumerables, you've never
-before had to _create_ such a complex NDS and _process_ it as well. Take it in
-pieces, remember your training, and you'll get there!
+before had to _create_ such a complex NDS and _process_ it as well. Work where
+you processed `Array` of `Arrays` or `Array`s of `Hash`es would be wise to
+freshen up on as preparation. Take it in pieces, remember your training, and
+you'll get there!
 
 Code your solution in `hashketball.rb` following the steps below. Use `learn`
 as you go to get additional information from test messages.
