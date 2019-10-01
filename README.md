@@ -186,8 +186,12 @@ first one is `num_points_scored`. We can run this method's test, again by using
 the [-e][example] or `--example` flag: `rspec spec/hashketball_spec.rb -e
 num_points_scored`.
 
-That `num_points_scored` method produces an _insight_. Why don't we define that
-method and have it return `game_hash`.
+That `num_points_scored` method produces an _insight_. Here's a specification:
+
+* Build a method, `num_points_scored` that takes in an argument of a player's
+  name and returns the number of points scored for that player.
+
+Why don't we define that method and have it return `game_hash`.
 
 ```ruby
 def num_points_scored
@@ -198,77 +202,20 @@ end
 Run the test again. Sure enough, our method fails (unsurprisingly). Here's a
 chance to employ the "see-saw" strategy. Iterate to get `num_points_scored`
 working. If you need to "invent" helper methods, to help you process
-`game_hash`, do so!
+`game_hash`, do so! Here's some of our thought process:
 
-### Iterating Through Nested Levels
+> Think about where in the hash you will find a player's `:points`. How can
+> you iterate down into that level? Think about the return value of your
+> method. Remember that `.each` returns the original collection that you are
+> iterating over. How can you return the number of points for a particular
+> player?
 
-If you follow the process, you will have a good grasp of your NDS and the work
-you need to accomplish. In a case where you get truly stuck, you might want to
-use a tool called `pry`.
+If you repeat the process we just explored together, you will be able to
+deliver more complex methods to satisfy tests. Find a failing test, build a
+"skeleton method," iterate on the code, get success, and move on. This is the
+way software is "grown" in professional contexts.
 
-Using Pry, when running RSpec tests with the `learn` command, we can actually
-pause the execution of our Ruby code. This allows us to step into the code and
-play with any available variables or methods.
-
-By using Pry while iterating through nested hashes, we can stop at each
-iteration and look at the values currently available. To do this, we'll need to
-require Pry and add `binding.pry` to the code wherever we want to pause.
-
-Let's take a look at an example - Open up the `hashketball.rb` file once you
-have your `game_hash` method working and add the line `require "pry"` at the
-top:
-
-```ruby
-require "pry"
-```
-
-Then, copy and paste the following method:
-
-```ruby
-def good_practices
-  game_hash.each do |location, team_data|
-    #are you ABSOLUTELY SURE what 'location' and 'team data' are? use binding.pry to find out!
-    binding.pry
-    team_data.each do |attribute, data|
-      #are you ABSOLUTELY SURE what 'attribute' and 'team data' are? use binding.pry to find out!
-      binding.pry
-
-      #what is 'data' at each loop throughout .each block? when will the following line of code work and when will it break?
-      data.each do |data_item|
-          binding.pry
-      end
-    end
-  end
-end
-```
-
-Beneath the `end` that closes the method definition, call the method
-(`good_practices`) and, in your terminal, run the file with `ruby
-hashketball.rb`.
-
-At every place Ruby sees `binding.pry` it will stop execution. While the
-program is stopped, you can print out variables that are in scope. At the first
-`binding.pry` in the example above, you can type in `location` or `team_data`
-and have those values printed out by `pry`. When you're done at the binding,
-type `exit` and the code will resume running. If you're all done with a given
-`pry` session `exit-program` will close Pry and return you to the command-line.
-
-Again, the best way to avoid needing Pry is to follow the process and only add
-code by small increments. But, sometimes, when all else fails, a `binding.pry`
-can help you find your way again. We'll teach you more about debugging
-throughout this course and do a deeper dive on Pry specifically.
-
-Okay, *now* we're ready to build out methods that will provide our _insights_
-
-### Method Building
-
-* Build a method, `num_points_scored` that takes in an argument of a player's
-  name and returns the number of points scored for that player.
-  * Think about where in the hash you will find a player's `:points`. How can
-    you iterate down into that level? Think about the return value of your
-    method. Remember that `.each` returns the original collection that you are
-    iterating over. How can you return the number of points for a particular
-    player?
+Here are the other methods we need:
 
 * Build a method, `shoe_size`, that takes in an argument of a player's name and
   returns the shoe size for that player.
