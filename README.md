@@ -118,8 +118,14 @@ allows a process like:
 * Run tests...
 * Working again!
 
-Syntactically valid, but wrong NDS are easier to correct than to fix
-_syntactically invalid_ ***and*** wrong NDS.
+Syntactically valid, but _incorrect_ NDS are easier to correct than to fix
+_syntactically invalid_ ***and*** _incorrect_ NDS.  Constantly asking Ruby "Hey
+can you read this?" means that you're never have a mountain of things that are
+broken...maybe small, more-easily-fixed little pile.
+
+Once you have a _syntactically valid,_ but _incorrect_ NDS, you can slowly add
+to the NDS and move it to being _correct_. A key strategy to iterating towards
+_correctness_ is running a small subset of tests.
 
 ### Process Tip: Run Only a Few Tests
 
