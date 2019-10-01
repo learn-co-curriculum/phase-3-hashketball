@@ -94,23 +94,57 @@ Away Team:
 | **Blocks**         | 7                 | 15                | 5                 | 1               | 5                 |
 | **Slam Dunks**     | 2                 | 10                | 5                 | 0               | 12                |
 
-Write a method called `game_hash` that returns your nested data structure.
+Write a method called `game_hash` that returns your nested data structure. We
+might suggest starting off with having `game_hash` return only a `{}`. Then run
+the `game_hash` tests (see next section) and slowly build up your NDS to
+satisfy those tests. We'll describe the strategy here in the next sections.
 
-We can run a section of our tests by using the following command from the CLI
+### Process Tip: Writing NDS is Hard
+
+Writing NDS' is challenging because we humans can lose track of whether or not
+we closed a `{...}` set or added a `,` in the right place. Running a small
+chunk of tests (more on that in the next section ) to make sure our NDS is
+_syntactically valid_ (i.e. honors Ruby's grammar rules) is a good idea. This
+allows a process like:
+
+* Start with something _syntactically valid_, but _incorrect_ e.g. `{}`
+* Make an edit
+* run the tests
+* Is the NDS valid? Great!
+* Make another edit
+* Run the tests...error!
+* Add missing comma
+* Add the comma
+* Run tests...
+* Working again!
+
+Syntactically valid, but wrong NDS are easier to correct than to fix
+_syntactically invalid_ ***and*** wrong NDS.
+
+### Process Tip: Run Only a Few Tests
+
+When we have a lot of tests and run them all with `learn` and get back all
+those failing messages it can make us feel sad. It's like telling someone
+you're trying to learn an étude on piano and they keep telling you it's not
+perfect yet. "Yeah, we know, that's why we' said we're _l-e-a-r-n-i-n-g_ it."
+
+We can run a section of our tests by using the following command from the CLI:
 
 `rspec spec/hashketball_spec.rb -e game_hash`
 
-The `learn` program uses `rspec` to evaluate test success. So, if we get a
-chunk of the tests working, as verified by the command above, we can trust that
-those tests will pass when we run `learn`. The thing that lets us run only a
-portion of the test suite is the `-e` for `--example` flag. It means "only run
-tests in a section that matches the word `game_hash`." You can read more about
-it in the [RSpec documentation for `--example`][example].
+The thing that lets us run only a portion of the test suite is the `-e` for
+`--example` flag. It means "only run tests in a section that matches the word
+`game_hash`." You can read more about it in the [RSpec documentation for `--example`][example].
 
-Let's zoom back out again and run _all_ the tests. We should expect to see lots
-of failures ***and that's OK!*** We expect tests we haven't worked on to, well,
-_not work_. But the good news, the thing that makes our hearts happy is that
-the three tests in the "`game_hash`" example are _passing_.
+The `learn` program uses `rspec` to evaluate test success. So, if we get a
+chunk of the tests working, as proved by `rspec`, we can trust that
+those tests will pass when we run `learn`.
+
+Let's zoom back out again and run _all_ the tests. Many tests fail, but the
+good news is that the three tests in the "`game_hash`" example are _passing_.
+
+With these Process Tips in your toolbox, you should be able to get to a valid
+NDS. Congratulations! That's the first ⅓ of the work done!
 
 ### Process Tip
 
