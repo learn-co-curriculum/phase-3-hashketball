@@ -146,6 +146,11 @@ The `learn` program uses `rspec` to evaluate test success. So, if we get a
 chunk of the tests working, as proved by `rspec`, we can trust that
 those tests will pass when we run `learn`.
 
+> **Wisdom**: Move from working, to working, to working. Never let "broken in
+> this way, and that way, and that way" mount up!
+
+### Leaving Step 1
+
 Let's zoom back out again and run _all_ the tests. Many tests fail, but the
 good news is that the three tests in the "`game_hash`" example are _passing_.
 
