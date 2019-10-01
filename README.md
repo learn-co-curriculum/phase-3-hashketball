@@ -31,7 +31,7 @@ Code your solution in `hashketball.rb` following the steps below. Because this
 challenge is so big, we'll show you new techniques for running only small
 chunks of the test suite so that you're not overwhelmed by all the test data!
 
-### Part 1: Building the Hash
+### Step 1: Building the Hash
 
 The first method you will define is called `game_hash`. This method contains and
 returns a hash nested in the following manner:
