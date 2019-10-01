@@ -17,14 +17,15 @@ answer some questions about the game.
 
 This challenge comes in two major pieces:
 
-1. Build an NDS from text and data stored in tables
-2. Process the NDS to produce _insights_ about how various players performed
+1. Build a nested data structure from text and data stored in tables
+2. Process the nested data structure to produce _insights_ about how various
+   players performed
 
-While you've worked with NDS using simple looping and Enumerables, you've never
-before had to _create_ such a complex NDS **and** _process_ it as well. Work
-where you processed `Array` of `Arrays` or `Array`s of `Hash`es would be wise
-to freshen up on as preparation. Take it in pieces, remember your training, and
-you'll get there!
+While you've worked with nested data structures using simple looping and
+Enumerables, you've never before had to _create_ such a complex nested data
+structure **and** _process_ it as well. Work where you processed `Array` of
+`Arrays` or `Array`s of `Hash`es would be wise to freshen up on as preparation.
+Take it in pieces, remember your training, and you'll get there!
 
 We also strongly recommend that you read the ***entire*** README before you
 start coding. We're going to show some tips and tricks that make the coding a
@@ -99,21 +100,22 @@ Away Team:
 
 Write a method called `game_hash` that returns your nested data structure. We
 might suggest starting off with having `game_hash` return only a `{}`. Then run
-the `game_hash` tests (see next section) and slowly build up your NDS to
-satisfy those tests. We'll describe the strategy here in the next sections.
+the `game_hash` tests (see next section) and slowly build up your nested data
+structure to satisfy those tests. We'll describe the strategy here in the next
+sections.
 
-### Process Tip: Writing NDS is Hard
+### Process Tip: Writing Nested Data Structures is Hard
 
-Writing NDSs is challenging because we humans can lose track of whether or not
-we closed a `{...}` set or added a `,` in the right place. Running a small
-chunk of tests (more on that in the next section ) to make sure our NDS is
-_syntactically valid_ (i.e. honors Ruby's grammar rules) is a good idea. This
-allows a process like:
+Writing nested data structures is challenging because we humans can lose track
+of whether or not we closed a `{...}` set or added a `,` in the right place.
+Running a small chunk of tests (more on that in the next section ) to make sure
+our nested data structure is _syntactically valid_ (i.e. honors Ruby's grammar
+rules) is a good idea. This allows a process like:
 
 * Start with something _syntactically valid_, but _incorrect_ e.g. `{}`
 * Make an edit
 * run the tests
-* Is the NDS valid? Great!
+* Is the nested data structure valid? Great!
 * Make another edit
 * Run the tests...error!
 * Add missing comma
@@ -121,15 +123,17 @@ allows a process like:
 * Run tests...
 * Working again!
 
-Syntactically valid, but _incorrect_ NDS are easier to correct than to fix
-_syntactically invalid_ ***and*** _incorrect_ NDS.  Constantly asking Ruby "Hey
-can you read this?" means that you're never have a mountain of things that are
-broken...maybe small, more-easily-fixed little pile.
+Syntactically valid, but _incorrect_ nested data structures are easier to
+correct than to fix _syntactically invalid_ ***and*** _incorrect_ nested data
+structures.  Constantly asking Ruby "Hey can you read this?" means that you're
+never have a mountain of things that are broken...maybe small,
+more-easily-fixed little pile.
 
-Once you have a _syntactically valid,_ but _incorrect_ NDS, you can slowly add
-to the NDS and move it to being _correct_. A key strategy to iterating towards
-_correctness_ is running a small subset of tests to have _Ruby_ validate our
-NDS instead of our error-prone human eyes.
+Once you have a _syntactically valid,_ but _incorrect_ nested data structure,
+you can slowly add to the nested data structure and move it to being _correct_.
+A key strategy to iterating towards _correctness_ is running a small subset of
+tests to have _Ruby_ validate our nested data structure instead of our
+error-prone human eyes.
 
 ### Process Tip: Run Only a Few Tests
 
@@ -147,8 +151,8 @@ The thing that lets us run only a portion of the test suite is the `-e` for
 `game_hash`." You can read more about it in the [RSpec documentation for `--example`][example].
 
 The `learn` program uses `rspec` to evaluate test success. So, if we get a
-chunk of the tests working, as proved by `rspec`, we can trust that
-those tests will pass when we run `learn`.
+chunk of the tests working, as proved by `rspec`, we can trust that those tests
+will pass when we run `learn`.
 
 > **Wisdom**: Move from working, to working, to working. Never let "broken in
 > this way, and that way, and that way" mount up!
@@ -157,33 +161,35 @@ those tests will pass when we run `learn`.
 
 Let's zoom back out again and run _all_ the tests. Many tests fail, but the
 good news is that the three tests in the "`game_hash`" example are _passing_.
-That means we have a _correct_ and _syntactically valid_ NDS to work with. That
-means we can start building the methods that the tests demand. We're ready for
-Step 2!
+That means we have a _correct_ and _syntactically valid_ nested data structure
+to work with. That means we can start building the methods that the tests
+demand. We're ready for Step 2!
 
 ## Step 2: Building Methods
 
-At this point you're where you were with earlier labs. You were given an NDS
-and then needed to process it to product _insights_. Since you have a thorough
-understanding of the NDS (you wrote it, after all), we don't need to review
-things like using `pp` to "pretty-print" the NDS. We can pick up on our process
-from where we need to start processing the NDS into _insights_.
+At this point you're where you were with earlier labs. You were given a nested
+data structure and then needed to process it to product _insights_. Since you
+have a thorough understanding of the nested data structure (you wrote it, after
+all), we don't need to review things like using `pp` to "pretty-print" the
+nested data structure. We can pick up on our process from where we need to
+start processing the nested data structure into _insights_.
 
-1. Ensure you can read data out of the NDS with simple, basic `[]` calls
-2. Wrap basic code that "reaches into" the NDS in methods that have friendly
-   human-names. Wrap basic (or "First Order") methods into methods that do more ("Nth
-   Order") and are human-brain-friendly (`list_snacks`)
+1. Ensure you can read data out of the nested data structure with simple, basic
+   `[]` calls
+2. Wrap basic code that "reaches into" the nested data structure in methods
+   that have friendly human-names. Wrap basic (or "First Order") methods into
+   methods that do more ("Nth Order") and are human-brain-friendly (`list_snacks`)
 3. Be flexible; work from what you have to where you want to go; or, work
    backwards; or, make a midpoint between what you have and what you need to
    have
 
-While you might have seen this pattern with simple NDS work, this pattern **is
-still valid**. The only thing that's changed is that in some places you can see
-where an Enumerable could make your code clearer and briefer.  ***This process
-works***. Take this lab as a chance to hone your skills attacking BIG problems
-with process _on your side_.
+While you might have seen this pattern with simple nested data structure work,
+this pattern **is still valid**. The only thing that's changed is that in some
+places you can see where an Enumerable could make your code clearer and
+briefer.  ***This process works***. Take this lab as a chance to hone your
+skills attacking BIG problems with process _on your side_.
 
-### Applying NDS-Processing Process
+### Applying Nested Data Structure-Processing Process
 
 Run `learn`. There are a whole bunch of methods that are expected to exist. The
 first one is `num_points_scored`. But there's so much output. Let's make it
