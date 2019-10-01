@@ -15,23 +15,26 @@ You're going to perform an analysis on NBA game. You've been provided some
 basic game data in a series of tables. You're going to ask Ruby to help you
 answer some questions about the game.
 
-This challenge comes in three major pieces:
+This challenge comes in two major pieces:
 
 1. Build an NDS from text and data stored in tables
-2. Understand your own NDS
 2. Process the NDS to produce _insights_ about how various players performed
 
 While you've worked with NDS using simple looping and Enumerables, you've never
-before had to _create_ such a complex NDS and _process_ it as well. Work where
-you processed `Array` of `Arrays` or `Array`s of `Hash`es would be wise to
-freshen up on as preparation. Take it in pieces, remember your training, and
+before had to _create_ such a complex NDS **and** _process_ it as well. Work
+where you processed `Array` of `Arrays` or `Array`s of `Hash`es would be wise
+to freshen up on as preparation. Take it in pieces, remember your training, and
 you'll get there!
+
+We also strongly recommend that you read the ***entire*** README before you
+start coding. We're going to show some tips and tricks that make the coding a
+lot easier...but only if you read through to the end.
 
 Code your solution in `hashketball.rb` following the steps below. Because this
 challenge is so big, we'll show you new techniques for running only small
 chunks of the test suite so that you're not overwhelmed by all the test data!
 
-### Step 1: Building the Hash
+## Step 1: Building the Hash
 
 The first method you will define is called `game_hash`. This method contains and
 returns a hash nested in the following manner:
@@ -101,7 +104,7 @@ satisfy those tests. We'll describe the strategy here in the next sections.
 
 ### Process Tip: Writing NDS is Hard
 
-Writing NDS' is challenging because we humans can lose track of whether or not
+Writing NDSs is challenging because we humans can lose track of whether or not
 we closed a `{...}` set or added a `,` in the right place. Running a small
 chunk of tests (more on that in the next section ) to make sure our NDS is
 _syntactically valid_ (i.e. honors Ruby's grammar rules) is a good idea. This
@@ -125,7 +128,8 @@ broken...maybe small, more-easily-fixed little pile.
 
 Once you have a _syntactically valid,_ but _incorrect_ NDS, you can slowly add
 to the NDS and move it to being _correct_. A key strategy to iterating towards
-_correctness_ is running a small subset of tests.
+_correctness_ is running a small subset of tests to have _Ruby_ validate our
+NDS instead of our error-prone human eyes.
 
 ### Process Tip: Run Only a Few Tests
 
@@ -153,17 +157,17 @@ those tests will pass when we run `learn`.
 
 Let's zoom back out again and run _all_ the tests. Many tests fail, but the
 good news is that the three tests in the "`game_hash`" example are _passing_.
+That means we have a _correct_ and _syntactically valid_ NDS to work with. That
+means we can start building the methods that the tests demand. We're ready for
+Step 2!
 
-With these Process Tips in your toolbox, you should be able to get to a valid
-NDS. Congratulations! That's the first ⅓ of the work done!
-
-
-### Step 2: Building Methods
+## Step 2: Building Methods
 
 At this point you're where you were with earlier labs. You were given an NDS
 and then needed to process it to product _insights_. Since you have a thorough
-understanding of the NDS (you wrote it, after all), let's review some
-strategies for processing the NDS into _insights_.
+understanding of the NDS (you wrote it, after all), we don't need to review
+things like using `pp` to "pretty-print" the NDS. We can pick up on our process
+from where we need to start processing the NDS into _insights_.
 
 1. Ensure you can read data out of the NDS with simple, basic `[]` calls
 2. Wrap basic code that "reaches into" the NDS in methods that have friendly
@@ -179,12 +183,19 @@ where an Enumerable could make your code clearer and briefer.  ***This process
 works***. Take this lab as a chance to hone your skills attacking BIG problems
 with process _on your side_.
 
-### Calling Methods within Methods
+### Applying NDS-Processing Process
 
 Run `learn`. There are a whole bunch of methods that are expected to exist. The
-first one is `num_points_scored`. We can run this method's test, again by using
-the [-e][example] or `--example` flag: `rspec spec/hashketball_spec.rb -e
-num_points_scored`.
+first one is `num_points_scored`. But there's so much output. Let's make it
+more manageable (again).
+
+We can run this method's test, again by using the [-e][example] or `--example`
+flag: `rspec spec/hashketball_spec.rb -e num_points_scored`.
+
+> **PRO TIP**: You can use this strategy to run small chunks of the test suite.
+> Simply look in the `spec/hashketball_spec.rb` file and find a `describe`
+> block. You can run all the tests under it by using that block's `String` as
+> an argument to `-e`.
 
 That `num_points_scored` method produces an _insight_. Here's a specification:
 
@@ -200,22 +211,23 @@ end
 ```
 
 Run the test again. Sure enough, our method fails (unsurprisingly). Here's a
-chance to employ the "see-saw" strategy. Iterate to get `num_points_scored`
+chance to employ the "see-saw" strategy. Add code to get `num_points_scored`
 working. If you need to "invent" helper methods, to help you process
-`game_hash`, do so! Here's some of our thought process:
+`game_hash`, do so! Here's some sample thought process:
 
-> Think about where in the hash you will find a player's `:points`. How can
-> you iterate down into that level? Think about the return value of your
-> method. Remember that `.each` returns the original collection that you are
-> iterating over. How can you return the number of points for a particular
-> player?
+> Think about where in the hash you will find a player's `:points`. How can you
+> iterate down into that level? Think about the return value of your method.
+> Remember that `.each` returns the original collection that you are iterating
+> over. How can you return the number of points for a particular player? How
+> would we have done it with a simple `while` loop? Which Enumerable helps
+> here? Is a while-loop better than an Enumerable? _Etc._
 
 If you repeat the process we just explored together, you will be able to
 deliver more complex methods to satisfy tests. Find a failing test, build a
 "skeleton method," iterate on the code, get success, and move on. This is the
-way software is "grown" in professional contexts.
+way software is "grown" in the real world.
 
-Here are the other methods we need:
+### Additional Methods
 
 * Build a method, `shoe_size`, that takes in an argument of a player's name and
   returns the shoe size for that player.
@@ -224,13 +236,13 @@ Here are the other methods we need:
     into the method as an argument?
 
 * Build a method, `team_colors`, that takes in an argument of the team name and
-  returns an array of that teams colors.
+  returns an `Array` of that teams colors.
 
-* Build a method, `team_names`, that operates on the game hash to return an
-  array of the team names.
+* Build a method, `team_names`, that operates on the game `Hash` to return an
+  `Array` of the team names.
 
 * Build a method, `player_numbers`, that takes in an argument of a team name and
-  returns an array of the jersey number's for that team.
+  returns an `Array` of the jersey number's for that team.
 
 * Build a method, `player_stats`, that takes in an argument of a player's name
   and returns a hash of that player's stats.
@@ -255,8 +267,7 @@ Here are the other methods we need:
   into steps:
   * First, find the player with the largest shoe size
   * Then, return that player's number of rebounds
-  * Remember to think about return values here. Use `binding.pry` to drop into
-    your method and understand what it is returning and why.
+  * Remember to think about return values here.
 
 **Bonus Questions:**
 
@@ -273,5 +284,11 @@ Define methods to return the answer to the following questions:
 1. Write a method that returns true if the player with the longest name had the
    most steals. Call the method `long_name_steals_a_ton?`.
 
+## Resources
+
+* [Rspec's example flag][example]
+* [Working with nested Hashes in Ruby](http://www.korenlc.com/nested-arrays-hashes-loops-in-ruby/)
+
 [example]: https://relishapp.com/rspec/rspec-core/v/2-12/docs/command-line/example-option#match-on-one-word
+
 <p class='util--hide'>View <a href='https://learn.co/lessons/advanced-hashes-hashketball'>Hashketball</a> on Learn.co and start learning to code for free.</p>
