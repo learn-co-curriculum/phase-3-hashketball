@@ -27,44 +27,9 @@ you processed `Array` of `Arrays` or `Array`s of `Hash`es would be wise to
 freshen up on as preparation. Take it in pieces, remember your training, and
 you'll get there!
 
-Code your solution in `hashketball.rb` following the steps below. Use `learn`
-as you go to get additional information from test messages.
-
-## Important Hint
-
-While we've been focusing on processing `Array`s and `Hash`es using our
-friends, the Enumerable methods, this is really just a bigger version of 
-working with nested data structures (NDS). Your mission is two parts: build a
-complex NDS _and then_ process the NDS to create statistical _insights_.
-
-Use the process you internalized from working with nested data structures. The
-process we recommend is: 
-
-1. Understand the NDS
-  * "Pretty-Print" NDS with `pp`
-  * Home-Grown Pretty-Print NDS
-2. Use `[]` to verify your understanding from Step 1
-  * Print values to verify your understanding
-  * Leave code comments and documentation for yourself
-3. Wrap uses of `[]` from Step 2 into new methods
-  * Create simple methods with meaningful names ("First-Order Methods")
-  * Ensure "First-Order Methods" use arguments to create flexibility
-4. See-saw between bottom-up and top-down method writing
-  * Write a method that provides an insight e.g. `oldest_student`
-  * Evaluate your First Order Methods
-  * Can you use your First-Order Methods to build the insight method's
-    implementation?
-    * **YES**: Great! Your method is done!
-    * **NO**: Build a new method that combines _other_ methods to get closer to what the insight method needs. Repeat step 4
-5. Insight method provides an insight! We're done!
-
-If you want, go back and look at some of your previous work from when you were
-just getting started with NDS: do you want an "`Array` of `Array` of `Hash`es"?
-Or will an "`Array` of `Array`" be just fine?
-
-Draw out your data structure on paper first. If you can't get the data
-structure to match the tests, no matter how clever your Enumerable use, you're
-going to get bad wrong output back out.
+Code your solution in `hashketball.rb` following the steps below. Because this
+challenge is so big, we'll show you new techniques for running only small
+chunks of the test suite so that you're not overwhelmed by all the test data!
 
 ### Part 1: Building the Hash
 
