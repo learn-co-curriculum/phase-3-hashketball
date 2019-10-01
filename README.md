@@ -284,6 +284,67 @@ Define methods to return the answer to the following questions:
 1. Write a method that returns true if the player with the longest name had the
    most steals. Call the method `long_name_steals_a_ton?`.
 
+## "I am completely stuck"
+
+This is a challenging lab. Process, small methods, helper methods, the see-saw
+technique. All of these are tools that are designed to get you un-stuck.
+
+One last tool is the "Pry" debugging library. We don't teach it before this lab
+because it brings in the concept of external "libraries" called "Gems." This
+can get really complex with problems around "Do you have permission on your
+computer to install gems" and "Did you install the gem in the wrong place and
+this lab can't see it, etc." We'll cover that in more depth in a different
+module.
+
+That said, if it's available on your system, it can be a real help.
+
+From the command line run the command `gem install pry`. If the `gem` command
+returns telling you that pry was installed or that it's already installed, the
+following should work for you.
+
+Next, at the top of `hasketball.rb` put the line `require pry`.
+
+Using Pry, when running RSpec tests with the `learn` command, we can actually
+pause the execution of our Ruby code. This allows us to step into the code and
+play with any available variables or methods that are in scope.
+
+We tell Ruby where to pause by writing `binding.pry` in our code. When Ruby
+sees that magic word it will stop execution and had things over to a REPL
+called Pry. It's there that we can do the inspection.
+
+Let's inspect what our `num_points_scored` works with:
+
+```ruby
+def num_points_scored(player_name)
+  binding.pry
+  game_hash.each do |location, team_data|
+    #are you ABSOLUTELY SURE what 'location' and 'team data' are? use binding.pry to find out!
+    binding.pry
+    team_data.each do |attribute, data|
+      #are you ABSOLUTELY SURE what 'attribute' and 'team data' are? use binding.pry to find out!
+      binding.pry
+
+      #what is 'data' at each loop throughout .each block? when will the following line of code work and when will it break?
+      data.each do |data_item|
+          binding.pry
+      end
+    end
+  end
+end
+```
+
+At every place Ruby sees `binding.pry` it will stop execution. While the
+program is stopped, you can print out variables that are in scope. At the first
+`binding.pry` in the example above, you can type in `location` or `team_data`
+and have those values printed out by `pry`. When you're done at the binding,
+type `exit` and the code will resume running. If you're all done with a given
+`pry` session `exit-program` will close Pry and return you to the command-line.
+
+Again, the best way to avoid needing Pry is to follow the process and only add
+code by small increments. But, sometimes, when all else fails, a `binding.pry`
+can help you find your way again. We'll teach you more about debugging
+throughout this course and do a deeper dive on Pry specifically.
+
 ## Resources
 
 * [Rspec's example flag][example]
