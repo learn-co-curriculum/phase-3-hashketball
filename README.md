@@ -8,7 +8,13 @@
 ## Instructions
 
 Great news! You're going to an NBA game. The only catch is that you've been
-volunteered to keep stats at the game.
+volunteered to keep stats at the game. Oh, and the data from the game is _not_
+stored in a nested data structure for you. You're going to have to build it.
+
+This challenge comes in two major pieces:
+
+1. Build an NDS from data stored in tables
+2. Process the NDS to produce _insights_ about how various players performed
 
 Code your solution in `hashketball.rb` following the steps below. Use `learn`
 as you go to get additional information from test messages.
