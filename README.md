@@ -160,26 +160,18 @@ NDS. Congratulations! That's the first ⅓ of the work done!
 
 ### Step 2: Building Methods
 
-Recall what you learned in working with nested data structures. When you have a
-complex NDS, use code to help you deal with it.
+At this point you're where you were with earlier labs. You were given an NDS
+and then needed to process it to product _insights_. Since you have a thorough
+understanding of the NDS (you wrote it, after all), let's review some
+strategies for processing the NDS into _insights_.
 
-1. Understand the NDS
-  * "Pretty-Print" NDS with `pp`
-  * Home-Grown Pretty-Print NDS
-2. Use `[]` to verify your understanding from Step 1
-  * Print values to verify your understanding
-  * Leave code comments and documentation for yourself
-3. Wrap uses of `[]` from Step 2 into new methods
-  * Create simple methods with meaningful names ("First-Order Methods")
-  * Ensure "First-Order Methods" use arguments to create flexibility
-4. See-saw between bottom-up and top-down method writing
-  * Write a method that provides an insight e.g. `oldest_student`
-  * Evaluate your First Order Methods
-  * Can you use your First-Order Methods to build the insight method's
-    implementation?
-    * **YES**: Great! Your method is done!
-    * **NO**: Build a new method that combines _other_ methods to get closer to what the insight method needs. Repeat step 4
-5. Insight method provides an insight! We're done!
+1. Ensure you can read data out of the NDS with simple, basic `[]` calls
+2. Wrap basic code that "reaches into" the NDS in methods that have friendly
+   human-names Wrap basic (or "First Order") methods into methods that do more ("Nth
+   Order") and are human-brain-friendly (`list_snacks`)
+3. Be flexible work from what you have to where you want to go; or, work
+   backwards; or, make a midpoint between what you have and what you need to
+   have
 
 While you might have seen this pattern with simple NDS work, this pattern **is
 still valid**. The only thing that's changed is that in the method
