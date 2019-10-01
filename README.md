@@ -157,21 +157,6 @@ good news is that the three tests in the "`game_hash`" example are _passing_.
 With these Process Tips in your toolbox, you should be able to get to a valid
 NDS. Congratulations! That's the first ⅓ of the work done!
 
-### Process Tip
-
-**TIP**: When you have your strategy for your NDS worked out, start typing it
-in in the file `hashketball.rb`. We recommend you start with an empty `Hash`.
-Run `ruby hashketball.rb`. If your NDS (the `Hash`) has been correctly
-formatted, the `ruby` command will silently return (unless you program in some
-`puts` or `print` statements). Every time you add a new player, "run" the
-program again. If you see that you have a syntax error, it's because you
-mis-typed your NDS. Fix it before you do another player. Constantly asking Ruby
-"Hey can you read this?" means that what you test with the `learn` command is
-not "broken." It might be _wrong_ and you need to change things, but it's much
-easier to tweak a valid NDS (that doesn't pass the tests) than to try to get a
-broken NDS (that doesn't pass the tests) working. Move from working, to
-working, to working. Never let "broken in this way, and that way, and that way"
-mount up!
 
 ### Step 2: Building Methods
 
