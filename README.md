@@ -52,6 +52,7 @@ returns a hash nested in the following manner:
 * The `:players` key points to an `Array` of `Hash`es. Each `Hash` in the `Array`
   should contain the players' stats. Each stat should be a key that points to
   a value for that stat. The keys should be:
+  * `:player_name`
   * `:number`
   * `:shoe`
   * `:points`
