@@ -355,7 +355,7 @@ throughout this course and do a deeper dive on Pry specifically.
 
 ## Conclusion
 
-This is a new frontier for you! You are now using powerful tools of Ruby 
+This is a new frontier for you! You are now using powerful tools of Ruby
 to transform a nested data structure, that you made from non-computer-ready
 data, to produce insights. You've made huge strides in becoming a really solid
 developer in the procedural programming paradigm. This is a huge moment.
@@ -364,6 +364,14 @@ Celebrate it!
 Believe it or not, the code that put rockets in space and mankind on the Moon
 were only slight variations on this style of programming. You've learned
 something really powerful!
+
+**Note**: This is a challenging lab. Do your best to solve using the information
+above. If you do find yourself stuck, a walkthrough video is provided at the end
+of this Readme.
+
+## Video Walkthrough
+
+<iframe width="640" height="480" src="https://www.youtube.com/watch?v=5R7K2TwxJiw" frameborder="0" allowfullscreen></iframe>
 
 ## Resources
 
