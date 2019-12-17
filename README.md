@@ -365,13 +365,14 @@ Believe it or not, the code that put rockets in space and mankind on the Moon
 were only slight variations on this style of programming. You've learned
 something really powerful!
 
-**Note**: This is a challenging lab. Do your best to solve using the information
-above. If you do find yourself stuck, a walkthrough video is provided at the end
-of this Readme.
-
 ## Video Walkthrough
 
-<iframe width="640" height="480" src="https://www.youtube.com/watch?v=5R7K2TwxJiw" frameborder="0" allowfullscreen></iframe>
+This is a challenging lab. Do your best to solve using the information
+above. If you do find yourself stuck, check out this walkthrough:
+
+[Video Walkthrough](https://www.youtube.com/watch?v=5R7K2TwxJiw)
+
+<iframe width="640" height="480" src="https://www.youtube.com/embed/5R7K2TwxJiw" frameborder="0" allowfullscreen></iframe>
 
 ## Resources
 
