@@ -278,6 +278,9 @@ way software is "grown" in the real world.
 
 **Bonus Questions:**
 
+If you would like to take on a few more challenges, there are a few more things you can do. In `spec/hashketball_spec.rb`, scroll to the bottom of the file and you will
+find additional tests that are currently commented out. Uncomment these by removing the `#` hashtag preceding each test line.
+
 Define methods to return the answer to the following questions:
 
 1. Which player has the most points? Call the method `most_points_scored`.
