@@ -224,16 +224,6 @@ When running `learn`, if any `binding.pry` lines are present in the solution,
 Pry will still kick in so you may want to remove them once you think you've
 solved a method.
 
-## I'm Still Completely Stuck!
-
-This is a challenging lab. Do your best to solve using the information above. If
-you do find yourself stuck still, check out the walkthrough below. Note that
-this lab has changed slightly since this walkthrough was recorded, but the
-solutions for each method will work the same way.
-
-[Video Walkthrough](https://www.youtube.com/watch?v=5R7K2TwxJiw)
-
-<iframe width="640" height="480" src="https://www.youtube.com/embed/5R7K2TwxJiw" frameborder="0" allowfullscreen></iframe>
 
 ## Conclusion
 
