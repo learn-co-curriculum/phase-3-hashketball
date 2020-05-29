@@ -130,7 +130,9 @@ way software is "grown" in the real world.
 
   ```bash
   player_stats("Alan Anderson")
-  => { :number => 0,
+  => {
+        :player_name => "Alan Anderson",
+        :number => 0,
         :shoe => 16,
         :points => 22,
         :rebounds => 12,
