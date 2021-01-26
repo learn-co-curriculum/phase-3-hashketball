@@ -242,8 +242,5 @@ something really powerful!
 ## Resources
 
 * [Rspec's example flag][example]
-* [Working with nested Hashes in Ruby](http://www.korenlc.com/nested-arrays-hashes-loops-in-ruby/)
 
 [example]: https://relishapp.com/rspec/rspec-core/v/2-12/docs/command-line/example-option#match-on-one-word
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/advanced-hashes-hashketball'>Hashketball</a> on Learn.co and start learning to code for free.</p>
