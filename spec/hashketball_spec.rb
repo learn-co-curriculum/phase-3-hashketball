@@ -41,59 +41,6 @@ describe 'hashketball' do
     { :player_name => "Kemba Walker", :number => 33, :shoe => 15, :points => 6, :rebounds => 12, :assists => 12, :steals => 7, :blocks => 5, :slam_dunks => 12 }
   }
 
-  describe '#game_hash' do
-    let(:top_level_keys) { [:home, :away] }
-    let(:team_level_keys) { [:team_name, :colors, :players] }
-
-    it 'returns a hash' do
-      expect(game_hash).to be_a(Hash)
-    end
-
-    it 'returns the correct top-level keys' do
-      top_level_keys.each do |key|
-        expect(game_hash.keys).to include(key)
-      end
-    end
-
-    it 'returns the correct team-level keys' do
-      team_level_keys.each do |key|
-        expect(game_hash.values.first.keys).to include(key)
-      end
-    end
-
-    it 'returns the correct player data for the :home team' do
-      home_players = [alan_anderson, reggie_evans, brook_lopez, mason_plumlee, jason_terry]
-      names = game_hash[:home][:players].map {|player| player[:player_name]}
-
-      home_players.each do |example_player_hash|
-        expect(names).to include(example_player_hash[:player_name]), "Expected the name #{example_player_hash[:player_name]}, but could not find. Check the spelling of player names. Capitalization matters!"
-
-        player_stats = game_hash[:home][:players].find do |player|
-          player[:player_name] == example_player_hash[:player_name]
-        end
-
-        expect(player_stats.keys).to match_array(example_player_hash.keys)
-        expect(player_stats.values).to match_array(example_player_hash.values)
-      end
-    end
-
-    it 'returns the correct player data for the :away team' do
-      away_players = [jeff_adrien, bismack_biyombo, desagna_diop, ben_gordon, kemba_walker]
-      names = game_hash[:away][:players].map {|player| player[:player_name]}
-
-      away_players.each do |example_player_hash|
-        expect(names).to include(example_player_hash[:player_name])
-
-        player_stats = game_hash[:away][:players].find do |player|
-          player[:player_name] == example_player_hash[:player_name]
-        end
-
-        expect(player_stats.keys).to match_array(example_player_hash.keys)
-        expect(player_stats.values).to match_array(example_player_hash.values)
-      end
-    end
-  end
-
   describe '#num_points_scored' do
 
     it 'knows the number of points scored by each player' do
