@@ -223,6 +223,6 @@ something really powerful!
 
 ## Resources
 
-- [Rspec's example flag][example]
+- [RSpec's example flag][example]
 
 [example]: https://relishapp.com/rspec/rspec-core/v/2-12/docs/command-line/example-option#match-on-one-word
