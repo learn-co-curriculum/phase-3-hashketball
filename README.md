@@ -20,7 +20,7 @@ Code your solution in `hashketball.rb` following the steps below. Keep
 
 This lab is the largest and most complex yet, so set aside some time for this
 one. Remember all the tricks you learned from working with objects in JavaScript
-&mdash; even though the syntax here is a bit different, the same problem solving
+— even though the syntax here is a bit different, the same problem solving
 techniques are still just as important.
 
 ## Building Methods
