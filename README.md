@@ -31,7 +31,7 @@ simple, basic `[]` calls.
 You can confirm this by starting IRB from this lesson's main directory and
 requiring the `hashketball.rb` file with `require './hashketball.rb'`:
 
-```sh
+```console
 2.6.1 :001 > require './hashketball.rb'
 => true
 ```
