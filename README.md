@@ -38,8 +38,8 @@ requiring the `hashketball.rb` file with `require './hashketball.rb'`:
 
 From here, you can interact with the `game_hash` method. Calling
 `game_hash[:home][:team_name]`, for example, should return `"Brooklyn Nets"`.
-This is because `game_hash` returns a hash - we can chain `[]` calls the hash it
-returns.
+This is because `game_hash` returns a hash - we can chain `[]` calls on the hash
+it returns.
 
 Wrap basic code that "reaches into" the nested data structure in methods that
 have friendly human-names.
