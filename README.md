@@ -9,7 +9,7 @@
 Welcome to Hashketball! In this lab, you will be implementing methods to work
 with a nested data structure. There's a method `#game_hash` that has been
 provided to you in this lab that will return a nested hash, which you'll be
-working with in as you write methods to solve the deliverables below.
+working with as you write methods to solve the deliverables below.
 
 We also strongly recommend that you read the **_entire_** README before you
 start coding. We're going to show some tips and tricks that make the coding a
@@ -41,8 +41,9 @@ From here, you can interact with the `game_hash` method. Calling
 This is because `game_hash` returns a hash - we can chain `[]` calls on the hash
 it returns.
 
-Wrap basic code that "reaches into" the nested data structure in methods that
-have friendly human-names.
+Write helper methods with descriptive names so it's easier to work with the data.
+For example, you can create a method called `all_players` that gets the players
+of both the home and away teams.
 
 Be flexible; work from what you have to where you want to go; or, work backward;
 or, make a midpoint between what you have and what you need to have
