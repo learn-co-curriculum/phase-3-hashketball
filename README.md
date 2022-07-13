@@ -50,9 +50,9 @@ or, make a midpoint between what you have and what you need to have
 
 ### Working with Nested Data Structures
 
-Run `learn`. There are a whole bunch of methods that are expected to exist. The
-first one is `num_points_scored`. But there's so much output. Let's make it more
-manageable.
+Run `learn test`. There are a whole bunch of methods that are expected to exist.
+The first one is `num_points_scored`. But there's so much output. Let's make it
+more manageable.
 
 We can run this method's test, again by using the [-e][example] or `--example`
 flag: `rspec spec/hashketball_spec.rb -e num_points_scored`.
@@ -167,9 +167,9 @@ One last tool is the "Pry" debugging library - it can be a real help.
 
 At the top of `hashketball.rb` put the line `require "pry"`.
 
-Using Pry, when running RSpec tests with the `learn` command, we can pause the
-execution of our Ruby code. This allows us to step into the code and play with
-any available variables or methods that are in scope.
+Using Pry, when running RSpec tests with the `learn test` command, we can pause
+the execution of our Ruby code. This allows us to step into the code and play
+with any available variables or methods that are in scope.
 
 We tell Ruby where to pause by writing `binding.pry` in our code. When Ruby sees
 that magic word, it will stop execution and hand things over to a REPL called
@@ -206,9 +206,9 @@ will resume running (until it hits another `binding.pry`). If you're all done
 with a given `pry` session `exit-program` or `exit!` will close Pry and return
 you to the command-line.
 
-When running `learn`, if any `binding.pry` lines are present in the solution,
-Pry will still kick in so you may want to remove them once you think you've
-solved a method.
+When running `learn test`, if any `binding.pry` lines are present in the
+solution, Pry will still kick in so you may want to remove them once you think
+you've solved a method.
 
 ## Conclusion
 
