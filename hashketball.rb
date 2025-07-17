@@ -1,5 +1,3 @@
-require 'pry'
-
 def game_hash
   {
     home: {
@@ -219,4 +217,7 @@ def player_with_longest_name
   longest_name 
 end
 
-binding.pry
+def long_name_steals_a_ton? 
+  player_with_most_steals = compare_stats(:steals, :player_name) 
+  player_with_most_steals == player_with_longest_name 
+end
