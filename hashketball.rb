@@ -191,4 +191,16 @@ def most_points_scored
   compare_stats(:points, :player_name)
 end 
 
-binding.pry 
+def winning_team 
+  winning_score = 0
+  winning_team = ""
+
+  game_hash.each do |team_location, team_data| 
+    total_points = team_data[:players].sum { |player| player[:points] } 
+    if total_points > winning_score 
+      winning_score = total_points 
+      winning_team = team_data[:team_name]
+    end
+  end
+  winning_team
+end
