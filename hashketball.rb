@@ -128,7 +128,7 @@ def game_hash
 end
 
 def get_player_data(name, value) 
-  game_hash.each do | team_location, team_data | 
+  game_hash.each do |team_location, team_data| 
     team_data[:players].each do |player| 
       return player[value] if player[:player_name] == name
     end
@@ -142,3 +142,15 @@ end
 def shoe_size(name) 
   get_player_data(name, :shoe)
 end
+
+def team_colors(team) 
+  game_hash.each do |team_location, team_data| 
+    return team_data[:colors] if team_data[:team_name] == team 
+  end
+end
+
+def team_names 
+  game_hash.map do |team_location, team_data| 
+    team_data[:team_name] 
+  end
+end 
