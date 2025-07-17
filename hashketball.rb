@@ -169,16 +169,26 @@ def player_stats(name)
   end
 end
 
-def big_shoe_rebounds 
-  biggest_shoe_rebounds = 0
-  biggest_shoe_size = 0
-  game_hash.each do |team_location, team_data|
+def compare_stats(stat_to_compare, info_to_return) 
+  return_value = 0 
+  winning_stat = 0 
+  game_hash.each do |team_location, team_data| 
     team_data[:players].each do |player| 
-      if player[:shoe] > biggest_shoe_size 
-        biggest_shoe_size = player[:shoe] 
-        biggest_shoe_rebounds = player[:rebounds] 
+      if player[stat_to_compare] > winning_stat 
+        winning_stat = player[stat_to_compare] 
+        return_value = player[info_to_return]
       end
     end
   end
-  biggest_shoe_rebounds 
+  return_value 
 end
+
+def big_shoe_rebounds 
+  compare_stats(:shoe, :rebounds)
+end
+
+def most_points_scored 
+  compare_stats(:points, :player_name)
+end 
+
+binding.pry 
