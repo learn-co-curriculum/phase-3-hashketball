@@ -198,3 +198,22 @@ def team_colors(team_name)
     end
   end
 end
+
+def team_names
+  game_hash.map do |location, team_data|
+    team_data[:team_name]
+  end
+end
+
+
+# def player_numbers(team_name)
+#   game_hash.each do |location, team_data|
+#     if team_name == team_data[:team_name]
+#       team_data.each do |attribute, data|
+#         if attribute == :players
+#           return data[:number]
+#         end
+#       end
+#     end
+#   end
+# end
