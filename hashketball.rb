@@ -127,53 +127,16 @@ def game_hash
   }
 end
 
-def home_team_player_stats
-  game_hash.each do |location, team_data|
-    if location == :home
-      return team_data[:players]
-    end
-  end
-end
-
-def away_team_player_stats
-  game_hash.each do |location, team_data|
-    if location == :away
-      return team_data[:players]
-    end
-  end
-end
-
 def all_player_stats
-  home_team_player_stats.concat(away_team_player_stats)
+  game_hash[location][:players]
 end
-
 
 def num_points_scored(player_name)
-  game_hash.each do |location, team_data|
-    team_data.each do |attribute, data|
-      if attribute == :players
-        data.each do |data_item|
-          if data_item[:player_name] == player_name
-            return data_item[:points] 
-          end
-        end
-      end
-    end
-  end
+  all_player_stats.find { |player| player[:player_name] == player_name }[:points]
 end
 
 def shoe_size(player_name)
-  game_hash.each do |location, team_data|
-    team_data.each do |attribute, data|
-      if attribute == :players
-        data.each do |data_item|
-          if data_item[:player_name] == player_name
-            return data_item[:shoe] 
-          end
-        end
-      end
-    end
-  end
+  all_player_stats.find { |player| player[:player_name] == player_name }[:shoe]
 end
 
 def team_colors(team_name)
@@ -205,15 +168,5 @@ def player_numbers(team_name)
 end
 
 def player_stats(player_name)
-  game_hash.each do |location, team_data|
-    team_data.each do |attribute, data|
-      if attribute == :players
-        data.each do |data_item|
-          if data_item[:player_name] == player_name
-            return data_item 
-          end
-        end
-      end
-    end
-  end
+  all_player_stats.find { |player| player[:player_name] == player_name }
 end
