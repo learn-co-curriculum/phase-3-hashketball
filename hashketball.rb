@@ -205,15 +205,16 @@ def team_names
   end
 end
 
-
-# def player_numbers(team_name)
-#   game_hash.each do |location, team_data|
-#     if team_name == team_data[:team_name]
-#       team_data.each do |attribute, data|
-#         if attribute == :players
-#           return data[:number]
-#         end
-#       end
-#     end
-#   end
-# end
+def player_numbers(team_name)
+  game_hash.each do |location, team_data|
+    if team_name == team_data[:team_name]
+      team_data.each do |attribute, player|
+        if attribute == :players
+          return player.map do |stats|
+            stats[:number]
+          end
+        end
+      end
+    end
+  end
+end
