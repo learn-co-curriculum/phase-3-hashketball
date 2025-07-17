@@ -127,6 +127,42 @@ def game_hash
   }
 end
 
+# Helper Methods:
+
+def home_team_player_stats
+  game_hash.each do |location, team_data|
+    if location == :home
+      return team_data[:players]
+    end
+  end
+end
+
+def away_team_player_stats
+  game_hash.each do |location, team_data|
+    if location == :away
+      return team_data[:players]
+    end
+  end
+end
+
+def all_player_stats
+  home_team_player_stats.concat(away_team_player_stats)
+end
+
+
+
+# def num_points_scored(player_name)
+#   all_player_stats.find do |name|
+#     binding.pry
+#     if player_name == name
+#       binding.pry
+#       return player_name[:points]
+#     end
+#   end
+# end
+
+
+
 def num_points_scored(player_name)
   game_hash.each do |location, team_data|
     team_data.each do |attribute, data|
@@ -134,6 +170,20 @@ def num_points_scored(player_name)
         data.each do |data_item|
           if data_item[:player_name] == player_name
             return data_item[:points] 
+          end
+        end
+      end
+    end
+  end
+end
+
+def shoe_size(player_name)
+  game_hash.each do |location, team_data|
+    team_data.each do |attribute, data|
+      if attribute == :players
+        data.each do |data_item|
+          if data_item[:player_name] == player_name
+            return data_item[:shoe] 
           end
         end
       end
