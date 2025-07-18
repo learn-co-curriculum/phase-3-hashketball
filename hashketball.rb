@@ -2,11 +2,11 @@
 def game_hash
   {
     home: {
-      team_name: "Brooklyn Nets",
-      colors: ["Black", "White"],
+      team_name: 'Brooklyn Nets',
+      colors: %w[Black White],
       players: [
         {
-          player_name: "Alan Anderson",
+          player_name: 'Alan Anderson',
           number: 0,
           shoe: 16,
           points: 22,
@@ -17,7 +17,7 @@ def game_hash
           slam_dunks: 1
         },
         {
-          player_name: "Reggie Evans",
+          player_name: 'Reggie Evans',
           number: 30,
           shoe: 14,
           points: 12,
@@ -28,7 +28,7 @@ def game_hash
           slam_dunks: 7
         },
         {
-          player_name: "Brook Lopez",
+          player_name: 'Brook Lopez',
           number: 11,
           shoe: 17,
           points: 17,
@@ -39,7 +39,7 @@ def game_hash
           slam_dunks: 15
         },
         {
-          player_name: "Mason Plumlee",
+          player_name: 'Mason Plumlee',
           number: 1,
           shoe: 19,
           points: 26,
@@ -50,7 +50,7 @@ def game_hash
           slam_dunks: 5
         },
         {
-          player_name: "Jason Terry",
+          player_name: 'Jason Terry',
           number: 31,
           shoe: 15,
           points: 19,
@@ -63,11 +63,11 @@ def game_hash
       ]
     },
     away: {
-      team_name: "Charlotte Hornets",
-      colors: ["Turquoise", "Purple"],
+      team_name: 'Charlotte Hornets',
+      colors: %w[Turquoise Purple],
       players: [
         {
-          player_name: "Jeff Adrien",
+          player_name: 'Jeff Adrien',
           number: 4,
           shoe: 18,
           points: 10,
@@ -78,7 +78,7 @@ def game_hash
           slam_dunks: 2
         },
         {
-          player_name: "Bismack Biyombo",
+          player_name: 'Bismack Biyombo',
           number: 0,
           shoe: 16,
           points: 12,
@@ -89,7 +89,7 @@ def game_hash
           slam_dunks: 10
         },
         {
-          player_name: "DeSagna Diop",
+          player_name: 'DeSagna Diop',
           number: 2,
           shoe: 14,
           points: 24,
@@ -100,7 +100,7 @@ def game_hash
           slam_dunks: 5
         },
         {
-          player_name: "Ben Gordon",
+          player_name: 'Ben Gordon',
           number: 8,
           shoe: 15,
           points: 33,
@@ -111,7 +111,7 @@ def game_hash
           slam_dunks: 0
         },
         {
-          player_name: "Kemba Walker",
+          player_name: 'Kemba Walker',
           number: 33,
           shoe: 15,
           points: 6,
@@ -126,4 +126,39 @@ def game_hash
   }
 end
 
-# Write code here
+def num_points_scored(name)
+  all_players(game_hash).find { |player| player[:player_name] == name }[:points]
+end
+
+def shoe_size(name)
+  all_players(game_hash).find { |player| player[:player_name] == name }[:shoe]
+end
+
+def player_stats(player_name)
+  all_players(game_hash).find { |player| player[:player_name] == player_name }
+end
+
+def big_shoe_rebounds
+  all_players(game_hash).max_by { |player| player[:shoe] }[:rebounds]
+end
+
+def all_players(hash)
+  hash[:home][:players] + hash[:away][:players]
+end
+
+def team_colors(team_name)
+  all_teams(game_hash).find { |team| team[:team_name] == team_name }[:colors]
+end
+
+def team_names
+  all_teams(game_hash).map { |team| team[:team_name] }
+end
+
+def player_numbers(team_name)
+  team = all_teams(game_hash).find { |team| team[:team_name] == team_name }
+  team[:players].map { |player| player[:number] }
+end
+
+def all_teams(hash)
+  [hash[:home], hash[:away]]
+end
