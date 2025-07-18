@@ -160,13 +160,13 @@ def find_team(team_name)
 end
 
 def winning_team
-  home_team_points = game_hash[:home][:players].sum do |player|
-    player[:points]
-  end
+  home_team_name = game_hash[:home][:team_name]
+  away_team_name = game_hash[:away][:team_name]
+  home_team_wins = team_points(:home) > team_points(:away)
 
-  away_team_points = game_hash[:away][:players].sum do |player|
-    player[:points]
-  end
+  home_team_wins ? home_team_name : away_team_name
+end
 
-  home_team_points > away_team_points ? game_hash[:home][:team_name] : game_hash[:away][:team_name]
+def team_points(location)
+  game_hash[location][:players].sum { |player| player[:points] }
 end
