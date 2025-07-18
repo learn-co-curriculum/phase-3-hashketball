@@ -128,11 +128,19 @@ def game_hash
 end
 
 def big_shoe_rebounds
-  player_with_biggest_shoe[:rebounds]
+  player_with_max(:shoe)[:rebounds]
 end
 
-def player_with_biggest_shoe
-  all_players.max { |player_a, player_b| player_a[:shoe] <=> player_b[:shoe] }
+def most_points_scored
+  player_with_max(:points)
+end
+
+def player_with_longest_name
+  all_players.max { |a, b| a[:player_name].length <=> b[:player_name].length }
+end
+
+def player_with_max(attribute)
+  all_players.max { |a, b| a[attribute] <=> b[attribute] }
 end
 
 def num_points_scored(player_name)
