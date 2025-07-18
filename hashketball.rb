@@ -154,3 +154,7 @@ end
 def all_teams
   [game_hash[:home], game_hash[:away]]
 end
+
+def team_names
+  all_teams.map { |team| team[:team_name] }
+end
