@@ -128,14 +128,14 @@ def game_hash
 end
 
 def num_points_scored(player_name)
-  find_player(player_name)[:points]
+  player_stats(player_name)[:points]
 end
 
 def shoe_size(player_name)
-  find_player(player_name)[:shoe]
+  player_stats(player_name)[:shoe]
 end
 
-def find_player(player_name)
+def player_stats(player_name)
   all_players.find { |player| player[:player_name] == player_name }
 end
 
