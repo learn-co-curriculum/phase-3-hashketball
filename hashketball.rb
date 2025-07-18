@@ -184,8 +184,11 @@ def find_team(team_name)
 end
 
 def winning_team
-  team = all_teams.max { |a, b| team_points(a) <=> team_points(b) }
-  team[:team_name]
+  team_with_most_points[:team_name]
+end
+
+def team_with_most_points
+  all_teams.max { |a, b| team_points(a) <=> team_points(b) }
 end
 
 def team_points(team)
