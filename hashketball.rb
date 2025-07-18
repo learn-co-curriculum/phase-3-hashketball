@@ -151,6 +151,14 @@ def team_names
   all_teams.map { |team| team[:team_name] }
 end
 
+def player_numbers(team_name)
+  players_for(team_name).map { |player| player[:number] }
+end
+
+def players_for(team_name)
+  find_team(team_name)[:players]
+end
+
 def all_teams
   [game_hash[:home], game_hash[:away]]
 end
