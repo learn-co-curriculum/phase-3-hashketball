@@ -147,14 +147,14 @@ def team_colors(team_name)
   find_team(team_name)[:colors]
 end
 
-def find_team(team_name)
-  all_teams.find { |team| team[:team_name] == team_name }
+def team_names
+  all_teams.map { |team| team[:team_name] }
 end
 
 def all_teams
   [game_hash[:home], game_hash[:away]]
 end
 
-def team_names
-  all_teams.map { |team| team[:team_name] }
+def find_team(team_name)
+  all_teams.find { |team| team[:team_name] == team_name }
 end
