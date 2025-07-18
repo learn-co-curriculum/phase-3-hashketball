@@ -131,6 +131,10 @@ def num_points_scored(player_name)
   find_player(player_name)[:points]
 end
 
+def shoe_size(player_name)
+  find_player(player_name)[:shoe]
+end
+
 def find_player(player_name)
   all_players.find { |player| player[:player_name] == player_name }
 end
@@ -139,6 +143,15 @@ def all_players
   game_hash[:home][:players] + game_hash[:away][:players]
 end
 
-def shoe_size(player_name)
-  find_player(player_name)[:shoe]
+def team_colors(team_name)
+  find_team(team_name)[:colors]
+end
+
+def find_team(team_name)
+  team = game_hash.find do |_key, team_attributes|
+    team_attributes[:team_name] == team_name
+  end
+
+  team_attributes = team[1]
+  team_attributes
 end
