@@ -127,6 +127,14 @@ def game_hash
   }
 end
 
+def big_shoe_rebounds
+  player_with_biggest_shoe[:rebounds]
+end
+
+def player_with_biggest_shoe
+  all_players.max { |player_a, player_b| player_a[:shoe] <=> player_b[:shoe] }
+end
+
 def num_points_scored(player_name)
   player_stats(player_name)[:points]
 end
