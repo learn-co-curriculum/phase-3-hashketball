@@ -138,3 +138,7 @@ end
 def all_players
   game_hash[:home][:players] + game_hash[:away][:players]
 end
+
+def shoe_size(player_name)
+  find_player(player_name)[:shoe]
+end
